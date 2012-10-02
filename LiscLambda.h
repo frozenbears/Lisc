@@ -4,7 +4,7 @@
 #import "LiscEnvironment.h"
 #import "LiscCallable.h"
 
-@interface LiscLambda : NSObject <LiscCallable>{
+@interface LiscLambda : NSObject <LiscCallable> {
     
     LiscEnvironment *environment;
     NSArray *vars; //of LiscSymbol

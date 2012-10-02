@@ -26,11 +26,21 @@
 			
 			if (i > 0 && i <args.count) {
 				output = [output stringByAppendingString:@" "];
-			} 
+			}
 			
-			output = [output stringByAppendingString:[[args objectAtIndex:i]toString]];
+			id exp = [args objectAtIndex:i];
+			
+			if ([exp isKindOfClass:[NSString class]]) {
+				output = [output stringByAppendingString:exp];
+			} else {
+				output = [output stringByAppendingString:[[args objectAtIndex:i]toString]];
+			}
 		}
-		NSLog(@"%@", output);
+		
+		NSFileHandle *outhandle = [NSFileHandle fileHandleWithStandardOutput];
+		[outhandle writeData:[output dataUsingEncoding:NSUTF8StringEncoding]];
+		[outhandle writeData:[@"\n"  dataUsingEncoding:NSUTF8StringEncoding]];
+		
 		return (id)[LiscNil _nil];		
 	};
 	

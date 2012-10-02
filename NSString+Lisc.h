@@ -6,6 +6,8 @@
 
 - (id)readLisc;
 
+- (id)atom;
+
 - (id)eval:(LiscEnvironment *)env;
 - (NSString *)toString;
 - (BOOL)isEqualToExpression:(id)exp;

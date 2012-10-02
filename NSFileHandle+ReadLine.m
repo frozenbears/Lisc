@@ -12,7 +12,7 @@
     NSMutableData* currentData = [[NSMutableData alloc] init];
     BOOL shouldReadMore = YES;
 	
-    NSUInteger _chunkSize = 10;
+    NSUInteger _chunkSize = 1;
 	
     while (shouldReadMore) {
         NSData* chunk = [self readDataOfLength:_chunkSize]; // always length = 10

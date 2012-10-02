@@ -1,6 +1,8 @@
 
 #import "NSString+Lisc.h"
 #import "LiscSymbol.h"
+#import "LiscNil.h"
+#import "RegexKitLite.h"
 
 
 @implementation NSString(Lisc)
@@ -25,17 +27,26 @@
 	return tokens;
 }
 
-- (id)atom:(NSString *)token {
+- (id)atom {
 	NSNumberFormatter *f = [NSNumberFormatter new];
-	NSNumber *number = [f numberFromString:token];
+	NSNumber *number = [f numberFromString:self];
 	[f release];
 	
+	//number
 	if (number) {
 		return number;
-	} else {
-		return [[[LiscSymbol alloc] initWithString:token] autorelease];
 	}
-	return nil;
+	
+	//string
+	else if ([self hasPrefix:@"\""]) {
+		//return the string without the surrounding quotes
+		return [self substringWithRange:NSMakeRange(1, [self length]-2)];
+	}
+	
+	//symbol
+	else {
+		return [[[LiscSymbol alloc] initWithString:self] autorelease];
+	}	
 }
 
 - (id)readFromTokens:(NSMutableArray *)tokenArray {
@@ -63,7 +74,7 @@
 	} else if ([token isEqualToString:@")"]) {
 		[self syntaxError:@"unexpected ')'"];
 	} else {
-		return [self atom:token];
+		return [token atom];
 	}
 	return nil;
 }
@@ -79,7 +90,10 @@
 }
 
 - (NSString *)toString {
-	return self;
+	NSString *output = @"\"";
+	output = [output stringByAppendingString:self];
+	output = [output stringByAppendingString:@"\""];
+	return output;
 }
 
 - (BOOL)isEqualToExpression:(id)exp {

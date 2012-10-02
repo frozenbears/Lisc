@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C070C91156A12D5005D6BCC /* LiscInputPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070C90156A12D5005D6BCC /* LiscInputPort.m */; };
+		0C070C94156A1665005D6BCC /* LiscEOF.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070C93156A1665005D6BCC /* LiscEOF.m */; };
+		0C070CD4156AC641005D6BCC /* LiscStringInputPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070CD3156AC641005D6BCC /* LiscStringInputPort.m */; };
+		0C070DFB156AED59005D6BCC /* LiscFileInputPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070DFA156AED59005D6BCC /* LiscFileInputPort.m */; };
+		0C269FDD153E9BB100D400AB /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C269FDC153E9BB100D400AB /* RegexKitLite.m */; };
 		0C300AA7147616C7007B6631 /* NSString+Lisc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C300AA6147616C7007B6631 /* NSString+Lisc.m */; };
 		0C300AB6147621DE007B6631 /* LiscBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C300AB5147621DE007B6631 /* LiscBoolean.m */; };
 		0C300AD5147625B3007B6631 /* LiscNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C300AD4147625B3007B6631 /* LiscNil.m */; };
@@ -44,6 +49,16 @@
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* Lisc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lisc.m; sourceTree = "<group>"; };
 		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		0C070C8F156A12D5005D6BCC /* LiscInputPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscInputPort.h; sourceTree = "<group>"; };
+		0C070C90156A12D5005D6BCC /* LiscInputPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscInputPort.m; sourceTree = "<group>"; };
+		0C070C92156A1665005D6BCC /* LiscEOF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscEOF.h; sourceTree = "<group>"; };
+		0C070C93156A1665005D6BCC /* LiscEOF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscEOF.m; sourceTree = "<group>"; };
+		0C070CD2156AC641005D6BCC /* LiscStringInputPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscStringInputPort.h; sourceTree = "<group>"; };
+		0C070CD3156AC641005D6BCC /* LiscStringInputPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscStringInputPort.m; sourceTree = "<group>"; };
+		0C070DF9156AED59005D6BCC /* LiscFileInputPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscFileInputPort.h; sourceTree = "<group>"; };
+		0C070DFA156AED59005D6BCC /* LiscFileInputPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscFileInputPort.m; sourceTree = "<group>"; };
+		0C269FDB153E9BB100D400AB /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		0C269FDC153E9BB100D400AB /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		0C300AA5147616C7007B6631 /* NSString+Lisc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Lisc.h"; sourceTree = "<group>"; };
 		0C300AA6147616C7007B6631 /* NSString+Lisc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Lisc.m"; sourceTree = "<group>"; };
 		0C300AB4147621DE007B6631 /* LiscBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscBoolean.h; sourceTree = "<group>"; };
@@ -114,6 +129,7 @@
 				0C36EB66153A56680023D73C /* Protocols */,
 				0C36EB65153A55510023D73C /* Types */,
 				0C36EB64153A54FE0023D73C /* Categories */,
+				0C269FDF153E9BB900D400AB /* Helpers */,
 				0C36EB68153A57000023D73C /* Other Sources */,
 				08FB7796FE84155DC02AAC07 /* Lisc.m */,
 				0CA5983D146CF11C00724E54 /* LiscTest.h */,
@@ -132,6 +148,15 @@
 				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
 			);
 			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		0C269FDF153E9BB900D400AB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0C269FDB153E9BB100D400AB /* RegexKitLite.h */,
+				0C269FDC153E9BB100D400AB /* RegexKitLite.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		0C36EB64153A54FE0023D73C /* Categories */ = {
@@ -165,6 +190,14 @@
 				0CCEC0CA147C966E00D6B4F2 /* LiscFunction.m */,
 				492B6879146DD1F000B6FCF4 /* LiscLambda.h */,
 				492B687A146DD1F000B6FCF4 /* LiscLambda.m */,
+				0C070C8F156A12D5005D6BCC /* LiscInputPort.h */,
+				0C070C90156A12D5005D6BCC /* LiscInputPort.m */,
+				0C070DF9156AED59005D6BCC /* LiscFileInputPort.h */,
+				0C070DFA156AED59005D6BCC /* LiscFileInputPort.m */,
+				0C070CD2156AC641005D6BCC /* LiscStringInputPort.h */,
+				0C070CD3156AC641005D6BCC /* LiscStringInputPort.m */,
+				0C070C92156A1665005D6BCC /* LiscEOF.h */,
+				0C070C93156A1665005D6BCC /* LiscEOF.m */,
 			);
 			name = Types;
 			sourceTree = "<group>";
@@ -285,6 +318,11 @@
 				0CCEC1B3148055D200D6B4F2 /* NSData+Extensions.m in Sources */,
 				0CCEC1BC14805A4300D6B4F2 /* LiscREPL.m in Sources */,
 				0C36EB63153A53790023D73C /* LiscCoreModule.m in Sources */,
+				0C269FDD153E9BB100D400AB /* RegexKitLite.m in Sources */,
+				0C070C91156A12D5005D6BCC /* LiscInputPort.m in Sources */,
+				0C070C94156A1665005D6BCC /* LiscEOF.m in Sources */,
+				0C070CD4156AC641005D6BCC /* LiscStringInputPort.m in Sources */,
+				0C070DFB156AED59005D6BCC /* LiscFileInputPort.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +340,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Lisc_Prefix.pch;
 				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = Lisc;
 			};
 			name = Debug;

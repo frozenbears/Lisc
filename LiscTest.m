@@ -3,6 +3,8 @@
 #import "LiscEnvironment.h"
 #import "LiscExpression.h"
 #import "NSString+Lisc.h"
+#import "LiscStringInputPort.h"
+#import "LiscEOF.h"
 
 @implementation LiscTest
 
@@ -18,7 +20,7 @@
 					  @"(is 3 12)",
 					  @"(if (is 3 12) (+ 5 10) (+ 100 300))",
 					  @"(is (quote foo) (quote bar))",
-					  @"(define blah (lambda (x y) (if (is x y) (quote foo) (quote bar))))",
+					  @"(define blah (lambda (x y) (if (is x y) \"foo\" \"bar\")))",
 					  @"(blah 10 20)",
 					  @"(blah 1523 1523)",
 					  @"(print (quote foo))",
@@ -33,6 +35,8 @@
 					  @"(first (1 2 3 4 5))",
 					  @"(rest (1 2 3 4 5))",
 					  @"(cons (1 2 3 4 5) 6)",
+					  @"(- 1 1 1) ;;this is a comment and you should just go ahead and ignore it",
+					  @"(print \"hello world!\") ;; strings!! :D",
 					  nil];
 	
 	LiscEnvironment *env = [LiscEnvironment globalEnvironment];
@@ -40,11 +44,12 @@
 	for (NSString *test in tests) {
 		NSLog(@">> %@", test);
 		
-		NSString *result = [[[test readLisc] eval:env] toString];
+		LiscStringInputPort *inport = [[[LiscStringInputPort alloc] initWithString:test] autorelease];
+		
+		NSString *result = [[[inport read] eval:env] toString];
 		if (![result isEqualToString:@"nil"]) {
 			NSLog(@"%@", result);
 		}
-		
 	}
     
 }
