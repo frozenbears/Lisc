@@ -7,9 +7,11 @@
 - (void)setupBindings {
 	
 	LiscCallBlock add = ^(NSArray *args) {
-		double sum;
+		double sum = [[args objectAtIndex:0] doubleValue];
+		
+		NSArray *rest = [args subarrayWithRange:NSMakeRange(1, args.count-1)];
 				
-		for (NSNumber *n in args) {
+		for (NSNumber *n in rest) {
 			sum += [n doubleValue];
 		}
 				
@@ -28,8 +30,8 @@
 		return (id)[NSNumber numberWithDouble:difference]; 
 	};
 	
-	[bindings setObject:add forKey:@"+"];
-	[bindings setObject:subtract forKey:@"-"];
+	[bindings setObject:[LiscFunction functionWithBlock:add withMinArgs:2] forKey:@"+"];
+	[bindings setObject:[LiscFunction functionWithBlock:subtract withMinArgs:2] forKey:@"-"];
 }
 
 

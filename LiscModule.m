@@ -24,4 +24,8 @@
 - (void)setupBindings {
 }
 
+- (void)addBindingWithName:(NSString *)name withFunction:(LiscFunction *)function {
+	[bindings setObject:function forKey:name];
+}
+
 @end

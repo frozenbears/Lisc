@@ -35,8 +35,7 @@
 
 - (void)addModule:(LiscModule *)module {
 	for (NSString *name in [module.bindings allKeys]) {
-		[self.dict setObject:
-		 [LiscFunction functionWithBlock:[module.bindings objectForKey:name]] forKey:name];
+		[self.dict setObject:[module.bindings objectForKey:name] forKey:name];
 	}
 }
 

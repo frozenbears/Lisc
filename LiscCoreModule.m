@@ -44,8 +44,8 @@
 		return (id)[LiscNil _nil];		
 	};
 	
-	[bindings setObject:is forKey:@"is"];
-	[bindings setObject:print forKey:@"print"];
+	[bindings setObject:[LiscFunction functionWithBlock:is withMinArgs:2] forKey:@"is"];
+	[bindings setObject:[LiscFunction functionWithBlock:print withMinArgs:1] forKey:@"print"];
 }
 
 @end
