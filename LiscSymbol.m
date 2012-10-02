@@ -20,7 +20,14 @@
 }
 
 - (id)eval:(LiscEnvironment *)env {
-	return [env find:self.name];
+	id retval = [env find:self.name];
+	if (!retval) {
+		NSString *errorMessage = [NSString stringWithFormat:@"Symbol Error: Unable to resolve symbol \"%@\"", self.name];
+		@throw [NSException exceptionWithName:@"SymbolError"
+									   reason:errorMessage
+									 userInfo:nil];
+	}
+	return retval;
 }
 
 - (NSString *)toString {
