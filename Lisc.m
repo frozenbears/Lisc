@@ -18,9 +18,14 @@ int main (int argc, const char * argv[]) {
 	while (1) {
 		NSString *prompt = @"> ";
 		[output writeData:[prompt dataUsingEncoding:NSUTF8StringEncoding]];
-		NSString *result = [[[inport read] eval:env] toString];
-		if (![result isEqualToString:@"nil"]) {
-			[output writeData:[result dataUsingEncoding:NSUTF8StringEncoding]];
+		@try {
+			NSString *result = [[[inport read] eval:env] toString];
+			if (![result isEqualToString:@"nil"]) {
+				[output writeData:[result dataUsingEncoding:NSUTF8StringEncoding]];
+				[output writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
+			}
+		} @catch (NSException *e) {
+			[output writeData:[e.description dataUsingEncoding:NSUTF8StringEncoding]];
 			[output writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
 		}
 	}
