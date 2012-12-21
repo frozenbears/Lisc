@@ -1,18 +1,13 @@
 
 #import <Cocoa/Cocoa.h>
-#import "LiscEnvironment.h"
+#import "LiscExpression.h"
 
-
-@interface LiscBoolean : NSObject {
+@interface LiscBoolean : LiscExpression {
 	BOOL value;
 }
 
 + (id)t;
 + (id)f;
-
-- (id)eval:(LiscEnvironment *)env;
-- (NSString *)toString;
-- (BOOL)isEqualToExpression:(id)exp;
 
 @property(nonatomic, assign) BOOL value;
 

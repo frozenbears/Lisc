@@ -12,21 +12,25 @@
 		0C070CD4156AC641005D6BCC /* LiscStringInputPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070CD3156AC641005D6BCC /* LiscStringInputPort.m */; };
 		0C070DFB156AED59005D6BCC /* LiscFileInputPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070DFA156AED59005D6BCC /* LiscFileInputPort.m */; };
 		0C269FDD153E9BB100D400AB /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C269FDC153E9BB100D400AB /* RegexKitLite.m */; };
-		0C300AA7147616C7007B6631 /* NSString+Lisc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C300AA6147616C7007B6631 /* NSString+Lisc.m */; };
 		0C300AB6147621DE007B6631 /* LiscBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C300AB5147621DE007B6631 /* LiscBoolean.m */; };
 		0C300AD5147625B3007B6631 /* LiscNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C300AD4147625B3007B6631 /* LiscNil.m */; };
 		0C36BF101473667F007A0F08 /* LiscSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C36BF0F1473667F007A0F08 /* LiscSymbol.m */; };
-		0C36BF8D14737A7E007A0F08 /* NSArray+Lisc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C36BF8C14737A7E007A0F08 /* NSArray+Lisc.m */; };
-		0C36BF9014737CD2007A0F08 /* NSNumber+Lisc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C36BF8F14737CD2007A0F08 /* NSNumber+Lisc.m */; };
 		0C36EB63153A53790023D73C /* LiscCoreModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C36EB62153A53790023D73C /* LiscCoreModule.m */; };
-		0CA5983F146CF11C00724E54 /* LiscTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA5983E146CF11C00724E54 /* LiscTest.m */; };
+		0C8259C3166494E500826946 /* LiscString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8259C2166494E500826946 /* LiscString.m */; };
+		0C825A1E1664A0DE00826946 /* LiscExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C825A1D1664A0DE00826946 /* LiscExpression.m */; };
+		0C9C5A3B1659FB3C00B50B2D /* LiscError.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9C5A3A1659FB3C00B50B2D /* LiscError.m */; };
+		0C9C5A63165A06A000B50B2D /* LiscNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9C5A62165A06A000B50B2D /* LiscNumber.m */; };
 		0CA598C1146D1AD000724E54 /* LiscEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA598C0146D1AD000724E54 /* LiscEnvironment.m */; };
+		0CCDF6BB16759BF400F36502 /* LiscArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCDF6BA16759BF400F36502 /* LiscArgs.m */; };
+		0CCDF7A71683B1F900F36502 /* LiscTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCDF7A61683B1F900F36502 /* LiscTest.m */; };
+		0CCDF7E41683C15F00F36502 /* LiscTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCDF7E31683C15F00F36502 /* LiscTestSuite.m */; };
+		0CCDF81316842D5A00F36502 /* LiscMainTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCDF81216842D5A00F36502 /* LiscMainTestSuite.m */; };
 		0CCEC0C5147C92C100D6B4F2 /* LiscModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC0C4147C92C100D6B4F2 /* LiscModule.m */; };
 		0CCEC0C8147C93FA00D6B4F2 /* LiscMathModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC0C7147C93FA00D6B4F2 /* LiscMathModule.m */; };
 		0CCEC0CB147C966E00D6B4F2 /* LiscFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC0CA147C966E00D6B4F2 /* LiscFunction.m */; };
 		0CCEC1B01480559B00D6B4F2 /* NSFileHandle+ReadLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC1AF1480559B00D6B4F2 /* NSFileHandle+ReadLine.m */; };
 		0CCEC1B3148055D200D6B4F2 /* NSData+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC1B2148055D200D6B4F2 /* NSData+Extensions.m */; };
-		0CCEC1BC14805A4300D6B4F2 /* LiscREPL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC1BB14805A4300D6B4F2 /* LiscREPL.m */; };
+		0CF2438716630B0B00A84D54 /* LiscList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2438616630B0B00A84D54 /* LiscList.m */; };
 		492B687B146DD1F000B6FCF4 /* LiscLambda.m in Sources */ = {isa = PBXBuildFile; fileRef = 492B687A146DD1F000B6FCF4 /* LiscLambda.m */; };
 		8DD76F9A0486AA7600D96B5E /* Lisc.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* Lisc.m */; settings = {ATTRIBUTES = (); }; };
 		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
@@ -59,25 +63,32 @@
 		0C070DFA156AED59005D6BCC /* LiscFileInputPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscFileInputPort.m; sourceTree = "<group>"; };
 		0C269FDB153E9BB100D400AB /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		0C269FDC153E9BB100D400AB /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
-		0C300AA5147616C7007B6631 /* NSString+Lisc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Lisc.h"; sourceTree = "<group>"; };
-		0C300AA6147616C7007B6631 /* NSString+Lisc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Lisc.m"; sourceTree = "<group>"; };
 		0C300AB4147621DE007B6631 /* LiscBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscBoolean.h; sourceTree = "<group>"; };
 		0C300AB5147621DE007B6631 /* LiscBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscBoolean.m; sourceTree = "<group>"; };
 		0C300AD3147625B3007B6631 /* LiscNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscNil.h; sourceTree = "<group>"; };
 		0C300AD4147625B3007B6631 /* LiscNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscNil.m; sourceTree = "<group>"; };
 		0C36BF0E1473667F007A0F08 /* LiscSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscSymbol.h; sourceTree = "<group>"; };
 		0C36BF0F1473667F007A0F08 /* LiscSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscSymbol.m; sourceTree = "<group>"; };
-		0C36BF8B14737A7E007A0F08 /* NSArray+Lisc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Lisc.h"; sourceTree = "<group>"; };
-		0C36BF8C14737A7E007A0F08 /* NSArray+Lisc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Lisc.m"; sourceTree = "<group>"; };
-		0C36BF8E14737CD2007A0F08 /* NSNumber+Lisc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Lisc.h"; sourceTree = "<group>"; };
-		0C36BF8F14737CD2007A0F08 /* NSNumber+Lisc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Lisc.m"; sourceTree = "<group>"; };
-		0C36BFC014738047007A0F08 /* LiscExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscExpression.h; sourceTree = "<group>"; };
 		0C36EB61153A53790023D73C /* LiscCoreModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscCoreModule.h; sourceTree = "<group>"; };
 		0C36EB62153A53790023D73C /* LiscCoreModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscCoreModule.m; sourceTree = "<group>"; };
-		0CA5983D146CF11C00724E54 /* LiscTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscTest.h; sourceTree = "<group>"; };
-		0CA5983E146CF11C00724E54 /* LiscTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscTest.m; sourceTree = "<group>"; };
+		0C8259C1166494E500826946 /* LiscString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscString.h; sourceTree = "<group>"; };
+		0C8259C2166494E500826946 /* LiscString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscString.m; sourceTree = "<group>"; };
+		0C825A1C1664A0DE00826946 /* LiscExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscExpression.h; sourceTree = "<group>"; };
+		0C825A1D1664A0DE00826946 /* LiscExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscExpression.m; sourceTree = "<group>"; };
+		0C9C5A391659FB3C00B50B2D /* LiscError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscError.h; sourceTree = "<group>"; };
+		0C9C5A3A1659FB3C00B50B2D /* LiscError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscError.m; sourceTree = "<group>"; };
+		0C9C5A61165A06A000B50B2D /* LiscNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscNumber.h; sourceTree = "<group>"; };
+		0C9C5A62165A06A000B50B2D /* LiscNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscNumber.m; sourceTree = "<group>"; };
 		0CA598BF146D1AD000724E54 /* LiscEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscEnvironment.h; sourceTree = "<group>"; };
 		0CA598C0146D1AD000724E54 /* LiscEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscEnvironment.m; sourceTree = "<group>"; };
+		0CCDF6B916759BF400F36502 /* LiscArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscArgs.h; sourceTree = "<group>"; };
+		0CCDF6BA16759BF400F36502 /* LiscArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscArgs.m; sourceTree = "<group>"; };
+		0CCDF7A51683B1F900F36502 /* LiscTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscTest.h; sourceTree = "<group>"; };
+		0CCDF7A61683B1F900F36502 /* LiscTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscTest.m; sourceTree = "<group>"; };
+		0CCDF7E21683C15F00F36502 /* LiscTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscTestSuite.h; sourceTree = "<group>"; };
+		0CCDF7E31683C15F00F36502 /* LiscTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscTestSuite.m; sourceTree = "<group>"; };
+		0CCDF81116842D5A00F36502 /* LiscMainTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscMainTestSuite.h; sourceTree = "<group>"; };
+		0CCDF81216842D5A00F36502 /* LiscMainTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscMainTestSuite.m; sourceTree = "<group>"; };
 		0CCEC0C3147C92C100D6B4F2 /* LiscModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscModule.h; sourceTree = "<group>"; };
 		0CCEC0C4147C92C100D6B4F2 /* LiscModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscModule.m; sourceTree = "<group>"; };
 		0CCEC0C6147C93FA00D6B4F2 /* LiscMathModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscMathModule.h; sourceTree = "<group>"; };
@@ -89,8 +100,8 @@
 		0CCEC1AF1480559B00D6B4F2 /* NSFileHandle+ReadLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+ReadLine.m"; sourceTree = "<group>"; };
 		0CCEC1B1148055D200D6B4F2 /* NSData+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Extensions.h"; sourceTree = "<group>"; };
 		0CCEC1B2148055D200D6B4F2 /* NSData+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Extensions.m"; sourceTree = "<group>"; };
-		0CCEC1BA14805A4300D6B4F2 /* LiscREPL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscREPL.h; sourceTree = "<group>"; };
-		0CCEC1BB14805A4300D6B4F2 /* LiscREPL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscREPL.m; sourceTree = "<group>"; };
+		0CF2438516630B0B00A84D54 /* LiscList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscList.h; sourceTree = "<group>"; };
+		0CF2438616630B0B00A84D54 /* LiscList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscList.m; sourceTree = "<group>"; };
 		32A70AAB03705E1F00C91783 /* Lisc_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lisc_Prefix.pch; sourceTree = "<group>"; };
 		492B6879146DD1F000B6FCF4 /* LiscLambda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscLambda.h; sourceTree = "<group>"; };
 		492B687A146DD1F000B6FCF4 /* LiscLambda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscLambda.m; sourceTree = "<group>"; };
@@ -125,19 +136,21 @@
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				08FB7796FE84155DC02AAC07 /* Lisc.m */,
+				0CCDF6B916759BF400F36502 /* LiscArgs.h */,
+				0CCDF6BA16759BF400F36502 /* LiscArgs.m */,
+				0CCEC11B147CC7E200D6B4F2 /* LiscCallBlock.h */,
+				0CA598BF146D1AD000724E54 /* LiscEnvironment.h */,
+				0CA598C0146D1AD000724E54 /* LiscEnvironment.m */,
+				0C9C5A391659FB3C00B50B2D /* LiscError.h */,
+				0C9C5A3A1659FB3C00B50B2D /* LiscError.m */,
+				0CCDF8A41684489D00F36502 /* Testing */,
 				0C36EB67153A56CD0023D73C /* Modules */,
 				0C36EB66153A56680023D73C /* Protocols */,
 				0C36EB65153A55510023D73C /* Types */,
 				0C36EB64153A54FE0023D73C /* Categories */,
 				0C269FDF153E9BB900D400AB /* Helpers */,
 				0C36EB68153A57000023D73C /* Other Sources */,
-				08FB7796FE84155DC02AAC07 /* Lisc.m */,
-				0CA5983D146CF11C00724E54 /* LiscTest.h */,
-				0CA5983E146CF11C00724E54 /* LiscTest.m */,
-				0CA598BF146D1AD000724E54 /* LiscEnvironment.h */,
-				0CA598C0146D1AD000724E54 /* LiscEnvironment.m */,
-				0CCEC1BA14805A4300D6B4F2 /* LiscREPL.h */,
-				0CCEC1BB14805A4300D6B4F2 /* LiscREPL.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -166,12 +179,6 @@
 				0CCEC1AF1480559B00D6B4F2 /* NSFileHandle+ReadLine.m */,
 				0CCEC1B1148055D200D6B4F2 /* NSData+Extensions.h */,
 				0CCEC1B2148055D200D6B4F2 /* NSData+Extensions.m */,
-				0C36BF8B14737A7E007A0F08 /* NSArray+Lisc.h */,
-				0C36BF8C14737A7E007A0F08 /* NSArray+Lisc.m */,
-				0C36BF8E14737CD2007A0F08 /* NSNumber+Lisc.h */,
-				0C36BF8F14737CD2007A0F08 /* NSNumber+Lisc.m */,
-				0C300AA5147616C7007B6631 /* NSString+Lisc.h */,
-				0C300AA6147616C7007B6631 /* NSString+Lisc.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -179,7 +186,6 @@
 		0C36EB65153A55510023D73C /* Types */ = {
 			isa = PBXGroup;
 			children = (
-				0CCEC11B147CC7E200D6B4F2 /* LiscCallBlock.h */,
 				0C36BF0E1473667F007A0F08 /* LiscSymbol.h */,
 				0C36BF0F1473667F007A0F08 /* LiscSymbol.m */,
 				0C300AB4147621DE007B6631 /* LiscBoolean.h */,
@@ -198,6 +204,14 @@
 				0C070CD3156AC641005D6BCC /* LiscStringInputPort.m */,
 				0C070C92156A1665005D6BCC /* LiscEOF.h */,
 				0C070C93156A1665005D6BCC /* LiscEOF.m */,
+				0C9C5A61165A06A000B50B2D /* LiscNumber.h */,
+				0C9C5A62165A06A000B50B2D /* LiscNumber.m */,
+				0CF2438516630B0B00A84D54 /* LiscList.h */,
+				0CF2438616630B0B00A84D54 /* LiscList.m */,
+				0C8259C1166494E500826946 /* LiscString.h */,
+				0C8259C2166494E500826946 /* LiscString.m */,
+				0C825A1C1664A0DE00826946 /* LiscExpression.h */,
+				0C825A1D1664A0DE00826946 /* LiscExpression.m */,
 			);
 			name = Types;
 			sourceTree = "<group>";
@@ -206,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				492B687C146DD73800B6FCF4 /* LiscCallable.h */,
-				0C36BFC014738047007A0F08 /* LiscExpression.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -230,6 +243,19 @@
 				32A70AAB03705E1F00C91783 /* Lisc_Prefix.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		0CCDF8A41684489D00F36502 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				0CCDF7A51683B1F900F36502 /* LiscTest.h */,
+				0CCDF7A61683B1F900F36502 /* LiscTest.m */,
+				0CCDF7E21683C15F00F36502 /* LiscTestSuite.h */,
+				0CCDF7E31683C15F00F36502 /* LiscTestSuite.m */,
+				0CCDF81116842D5A00F36502 /* LiscMainTestSuite.h */,
+				0CCDF81216842D5A00F36502 /* LiscMainTestSuite.m */,
+			);
+			name = Testing;
 			sourceTree = "<group>";
 		};
 		1AB674ADFE9D54B511CA2CBB /* Products */ = {
@@ -302,13 +328,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DD76F9A0486AA7600D96B5E /* Lisc.m in Sources */,
-				0CA5983F146CF11C00724E54 /* LiscTest.m in Sources */,
 				0CA598C1146D1AD000724E54 /* LiscEnvironment.m in Sources */,
 				492B687B146DD1F000B6FCF4 /* LiscLambda.m in Sources */,
 				0C36BF101473667F007A0F08 /* LiscSymbol.m in Sources */,
-				0C36BF8D14737A7E007A0F08 /* NSArray+Lisc.m in Sources */,
-				0C36BF9014737CD2007A0F08 /* NSNumber+Lisc.m in Sources */,
-				0C300AA7147616C7007B6631 /* NSString+Lisc.m in Sources */,
 				0C300AB6147621DE007B6631 /* LiscBoolean.m in Sources */,
 				0C300AD5147625B3007B6631 /* LiscNil.m in Sources */,
 				0CCEC0C5147C92C100D6B4F2 /* LiscModule.m in Sources */,
@@ -316,13 +338,21 @@
 				0CCEC0CB147C966E00D6B4F2 /* LiscFunction.m in Sources */,
 				0CCEC1B01480559B00D6B4F2 /* NSFileHandle+ReadLine.m in Sources */,
 				0CCEC1B3148055D200D6B4F2 /* NSData+Extensions.m in Sources */,
-				0CCEC1BC14805A4300D6B4F2 /* LiscREPL.m in Sources */,
 				0C36EB63153A53790023D73C /* LiscCoreModule.m in Sources */,
 				0C269FDD153E9BB100D400AB /* RegexKitLite.m in Sources */,
 				0C070C91156A12D5005D6BCC /* LiscInputPort.m in Sources */,
 				0C070C94156A1665005D6BCC /* LiscEOF.m in Sources */,
 				0C070CD4156AC641005D6BCC /* LiscStringInputPort.m in Sources */,
 				0C070DFB156AED59005D6BCC /* LiscFileInputPort.m in Sources */,
+				0C9C5A3B1659FB3C00B50B2D /* LiscError.m in Sources */,
+				0C9C5A63165A06A000B50B2D /* LiscNumber.m in Sources */,
+				0CF2438716630B0B00A84D54 /* LiscList.m in Sources */,
+				0C8259C3166494E500826946 /* LiscString.m in Sources */,
+				0C825A1E1664A0DE00826946 /* LiscExpression.m in Sources */,
+				0CCDF6BB16759BF400F36502 /* LiscArgs.m in Sources */,
+				0CCDF7A71683B1F900F36502 /* LiscTest.m in Sources */,
+				0CCDF7E41683C15F00F36502 /* LiscTestSuite.m in Sources */,
+				0CCDF81316842D5A00F36502 /* LiscMainTestSuite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,7 @@
 
 #import "LiscFileInputPort.h"
 #import "NSFileHandle+ReadLine.h"
+#import "LiscEOF.h"
 
 @implementation LiscFileInputPort
 
@@ -31,7 +32,9 @@
 }
 
 - (id)readLine {
-	return [handle readLine];
+	NSString *line = [handle readLine];
+	if (!line || !line.length) return [LiscEOF eof];
+	return line;
 }
 
 - (void)dealloc {

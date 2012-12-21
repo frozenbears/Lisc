@@ -1,8 +1,9 @@
 
 #import <Foundation/Foundation.h>
+#import "LiscExpression.h"
 
 @protocol LiscCallable <NSObject>
 
-- (id)callWithArgs:(NSArray *)args;
+- (LiscExpression *)callWithArgs:(NSArray *)args;
 
 @end

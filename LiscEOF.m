@@ -11,4 +11,8 @@
 	return @"#EOF#";
 }
 
+- (BOOL)isEqualToExpression:(LiscExpression *)exp {
+	return [exp isKindOfClass:[LiscEOF class]];
+}
+
 @end

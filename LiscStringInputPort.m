@@ -15,11 +15,6 @@
 	return self;
 }
 
-- (void)dealloc {
-	self.lines = nil;
-	[super dealloc];
-}
-
 - (id)readLine {
 	if (lines.count) {
 		NSString *line = [lines objectAtIndex:0];
@@ -28,6 +23,11 @@
 	} else {
 		return [LiscEOF eof];
 	}
+}
+
+- (void)dealloc {
+	self.lines = nil;
+	[super dealloc];
 }
 
 @end

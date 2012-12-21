@@ -2,7 +2,10 @@
 #import "NSFileHandle+Readline.h"
 #import "NSData+Extensions.h"
 
-@implementation NSFileHandle (Readline)
+//category implementation gratefully borrowed from:
+//http://stackoverflow.com/questions/3707427/how-to-read-data-from-nsfilehandle-line-by-line
+
+@implementation NSFileHandle(Readline)
 
 - (NSString*)readLine {
 	

@@ -1,8 +1,8 @@
 
-
 #import <Cocoa/Cocoa.h>
+#import "LiscExpression.h"
 
-@interface LiscInputPort : NSObject {
+@interface LiscInputPort : LiscExpression {
 	id lineBuffer;
 }
 

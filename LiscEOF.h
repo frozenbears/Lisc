@@ -1,7 +1,8 @@
 
 #import <Cocoa/Cocoa.h>
+#import "LiscExpression.h"
 
-@interface LiscEOF : NSObject {
+@interface LiscEOF : LiscExpression {
 
 }
 

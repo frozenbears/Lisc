@@ -7,15 +7,11 @@
 	return [[LiscNil new] autorelease];
 }
 
-- (id)eval:(LiscEnvironment *)env {
-	return self;
-}
-
 - (NSString *)toString {
 	return @"nil";
 }
 
-- (BOOL)isEqualToExpression:(id)exp {
+- (BOOL)isEqualToExpression:(LiscExpression *)exp {
 	return [self isMemberOfClass:[exp class]];
 }
 

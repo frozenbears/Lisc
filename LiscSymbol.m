@@ -1,5 +1,6 @@
 
 #import "LiscSymbol.h"
+#import "LiscError.h"
 
 @implementation LiscSymbol
 
@@ -19,13 +20,12 @@
 	return copy;
 }
 
-- (id)eval:(LiscEnvironment *)env {
-	id retval = [env find:self.name];
+//evaluating a symbol always means trying to resolve it
+- (LiscExpression *)eval:(LiscEnvironment *)env {
+	LiscExpression *retval = [env find:self.name];
 	if (!retval) {
-		NSString *errorMessage = [NSString stringWithFormat:@"Symbol Error: Unable to resolve symbol \"%@\"", self.name];
-		@throw [NSException exceptionWithName:@"SymbolError"
-									   reason:errorMessage
-									 userInfo:nil];
+		NSString *errorMessage = [NSString stringWithFormat:@"Name Error: Unable to resolve symbol \"%@\"", self.name];
+		[LiscError raiseNameError:errorMessage];
 	}
 	return retval;
 }
@@ -34,7 +34,7 @@
 	return self.name;
 }
 
-- (BOOL)isEqualToExpression:(id)exp {
+- (BOOL)isEqualToExpression:(LiscExpression *)exp {
 	if ([self isMemberOfClass:[exp class]]) {
 		NSString *left = self.name;
 		NSString *right = ((LiscSymbol *)exp).name;

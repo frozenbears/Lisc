@@ -17,9 +17,6 @@
 	return b;
 }
 
-- (id)eval:(LiscEnvironment *)env {
-	return self;
-}
 - (NSString *)toString {
 	if (self.value) {
 		return @"true";
@@ -28,7 +25,7 @@
 	}
 }
 
-- (BOOL)isEqualToExpression:(id)exp {
+- (BOOL)isEqualToExpression:(LiscExpression *)exp {
 	if ([self isMemberOfClass:[exp class]]) {
 		BOOL left = self.value;
 		BOOL right = ((LiscBoolean *)exp).value;

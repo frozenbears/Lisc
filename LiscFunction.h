@@ -2,17 +2,15 @@
 #import <Cocoa/Cocoa.h>
 #import "LiscCallable.h"
 #import "LiscCallBlock.h"
+#import "LiscExpression.h"
 
-
-@interface LiscFunction : NSObject <LiscCallable> {
+@interface LiscFunction : LiscExpression <LiscCallable> {
 	LiscCallBlock block;
-	int minArgs;
 }
 
-+ (LiscFunction *)functionWithBlock:(LiscCallBlock) b withMinArgs:(int)theMinArgs;
-- (id)initWithBlock:(LiscCallBlock)b withMinArgs:(int)theMinArgs;
++ (LiscFunction *)functionWithBlock:(LiscCallBlock)b;
+- (id)initWithBlock:(LiscCallBlock)b;
 
 @property(nonatomic, assign) LiscCallBlock block;
-@property(nonatomic, assign) int minArgs;
 
 @end

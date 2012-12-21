@@ -1,57 +1,85 @@
 
 #import "LiscTest.h"
-#import "LiscEnvironment.h"
-#import "LiscExpression.h"
-#import "NSString+Lisc.h"
 #import "LiscStringInputPort.h"
 #import "LiscEOF.h"
 
 @implementation LiscTest
 
-- (void)run {
-    	    
-	NSArray *tests = [NSArray arrayWithObjects:@"(+ (+ 5 6 7) 1 2 3)",
-					  @"(- 112 35)",
-					  @"(define foo (lambda (x) (+ x 20)))",
-					  @"(foo 100)",
-					  @"(is 3 3)",
-					  @"(is (1 2 3) (1 2 3))",
-					  @"(is (1 2 3) (2 3 4 5))",
-					  @"(is 3 12)",
-					  @"(if (is 3 12) (+ 5 10) (+ 100 300))",
-					  @"(is (quote foo) (quote bar))",
-					  @"(define blah (lambda (x y) (if (is x y) \"foo\" \"bar\")))",
-					  @"(blah 10 20)",
-					  @"(blah 1523 1523)",
-					  @"(print (quote foo))",
-					  @"(do (print 3) (print (quote three!!)) (print 33333 3 (1 2 3) (quote hobo)))",
-					  @"(print (quote the-secret-of-life:) (+ 155.88 87.77 18.2))",
-					  @"(define num 3)",
-					  @"(define mutate (lambda (new) (set! num new)))",
-					  @"(mutate 211)",
-					  @"(print num)",
-					  @"(set! num 111)",
-					  @"(print num)",
-					  @"(first (1 2 3 4 5))",
-					  @"(rest (1 2 3 4 5))",
-					  @"(cons (1 2 3 4 5) 6)",
-					  @"(- 1 1 1) ;;this is a comment and you should just go ahead and ignore it",
-					  @"(print \"hello world!\") ;; strings!! :D",
-					  nil];
-	
-	LiscEnvironment *env = [LiscEnvironment globalEnvironment];
-	
-	for (NSString *test in tests) {
-		NSLog(@">> %@", test);
-		
-		LiscStringInputPort *inport = [[[LiscStringInputPort alloc] initWithString:test] autorelease];
-		
-		NSString *result = [[[inport read] eval:env] toString];
-		if (![result isEqualToString:@"nil"]) {
-			NSLog(@"%@", result);
-		}
+@synthesize environment;
+@synthesize expression;
+@synthesize expectedExpression;
+@synthesize inputString;
+@synthesize expectedString;
+
+- (id)initWithExpression:(LiscExpression *)theExpression expectingResult:(LiscExpression *)expectedResult {
+	if (self = [super init]) {
+		self.environment = [LiscEnvironment globalEnvironment];
+		self.expression = theExpression;
+		self.expectedExpression = expectedResult;
 	}
-    
+	return self;
+}
+
++ (id)testWithExpression:(LiscExpression *)theExpression expectingResult:(LiscExpression *)expectedResult {
+	return [[[LiscTest alloc] initWithExpression:theExpression expectingResult:expectedResult] autorelease];
+}
+
+- (id)initWithInputString:(NSString *)theInputString expectingResult:(NSString *)expectedResult {
+	if (self = [super init]) {
+		self.environment = [LiscEnvironment globalEnvironment];
+		self.inputString = theInputString;
+		self.expectedString = expectedResult;
+	}
+	return self;
+}
+
++ (id)testWithInputString:(NSString *)theInputString expectingResult:(NSString *)expectedResult {
+	return [[[LiscTest alloc] initWithInputString:theInputString expectingResult:expectedResult] autorelease];
+}
+
+- (BOOL)run {
+	@try {
+		if (inputString) {
+			LiscStringInputPort *inport = [[[LiscStringInputPort alloc] initWithString:inputString] autorelease];
+			LiscStringInputPort *expectedPort = [[[LiscStringInputPort alloc] initWithString:expectedString] autorelease];
+			
+			LiscExpression *exp = nil;
+			
+			//we want to read through and evaluate all the expressions in the input string
+			//but only compare the last one with the expected value
+			while (1) {
+				LiscExpression *read = [[inport read] eval:environment];
+				if ([read isKindOfClass:[LiscEOF class]]) {
+					break;
+				}
+				exp = read;
+			}
+			
+			LiscExpression *exp2 = [[expectedPort read] eval:environment];
+			
+			BOOL result = [exp isEqualToExpression:exp2];
+			NSLog(@"%@ => %@, expecting %@: %@", inputString, [exp toString], [exp2 toString], result ? @"PASS" : @"FAIL");
+			return result;
+		} else {
+			BOOL result = [[expression eval:environment] isEqualToExpression:expectedExpression];
+			NSLog(@"%@ => %@, expecting %@: %@", [expression toString], [expectedExpression toString], [expectedExpression toString], result ? @"PASS" : @"FAIL" );
+			return result;
+		}
+	} @catch (NSException *e) {
+		NSString *test = inputString ? : [expression toString];
+		NSString *expected = expectedString ? : [expectedExpression toString];
+		NSLog(@"%@, expecting %@: %@, %@", test, expected, e.description, @"FAIL");
+		return NO;
+	}
+}
+
+- (void)dealloc {
+	self.environment = nil;
+	self.expression = nil;
+	self.expectedExpression = nil;
+	self.inputString = nil;
+	self.expectedString = nil;
+	[super dealloc];
 }
 
 @end

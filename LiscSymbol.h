@@ -1,16 +1,13 @@
 
 #import <Cocoa/Cocoa.h>
+#import "LiscExpression.h"
 #import "LiscEnvironment.h"
 
-@interface LiscSymbol : NSObject {
+@interface LiscSymbol : LiscExpression {
 	NSString *name;
 }
 
 - (id)initWithString:(NSString *)string;
-
-- (id)eval:(LiscEnvironment *)env;
-- (NSString *)toString;
-- (BOOL)isEqualToExpression:(id)exp;
 
 @property(nonatomic, copy) NSString *name;
 

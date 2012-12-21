@@ -1,15 +1,11 @@
 
 #import <Cocoa/Cocoa.h>
-#import "LiscEnvironment.h"
+#import "LiscExpression.h"
 
-@interface LiscNil : NSObject {
+@interface LiscNil : LiscExpression {
 
 }
 
 + (LiscNil *)_nil;
-
-- (id)eval:(LiscEnvironment *)env;
-- (NSString *)toString;
-- (BOOL)isEqualToExpression:(id)exp;
 
 @end

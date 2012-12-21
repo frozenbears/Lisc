@@ -1,39 +1,55 @@
 
 #import "LiscMathModule.h"
 #import "LiscCallBlock.h"
+#import "LiscNumber.h"
+#import "LiscError.h"
+#import "LiscArgs.h"
 
 @implementation LiscMathModule
 
 - (void)setupBindings {
 	
 	LiscCallBlock add = ^(NSArray *args) {
-		double sum = [[args objectAtIndex:0] doubleValue];
+		double sum;
+		BOOL first = YES;
 		
-		NSArray *rest = [args subarrayWithRange:NSMakeRange(1, args.count-1)];
-				
-		for (NSNumber *n in rest) {
-			sum += [n doubleValue];
+		[LiscArgs checkArgs:args 
+				  expecting:[NSArray arrayWithObjects:[LiscNumber class], [LiscNumber class], nil]
+				   variadic:YES];
+		
+		for (LiscNumber *n in args) {
+			if (first) {
+				sum = [n.number doubleValue];
+				first = NO;
+			} else {
+				sum += [((LiscNumber *)n).number doubleValue];
+			}
 		}
 				
-		return (id)[NSNumber numberWithDouble:sum]; 
+		return (id)[LiscNumber numberWithNumber:[NSNumber numberWithDouble:sum]]; 
 	};
 	
 	LiscCallBlock subtract = ^(NSArray *args) {
-		double difference = [[args objectAtIndex:0]doubleValue];
+		double difference;
+		BOOL first = YES;
 		
-		NSArray *rest = [args subarrayWithRange:NSMakeRange(1, args.count-1)];
+		[LiscArgs checkArgs:args 
+				  expecting:[NSArray arrayWithObjects:[LiscNumber class], [LiscNumber class], nil]
+				   variadic:YES];
 		
-		for (NSNumber *n in rest) {
-			difference -= [n doubleValue];
-		}
-		
-		return (id)[NSNumber numberWithDouble:difference]; 
+		for (LiscNumber *n in args) {
+			if (first) {
+				difference = [n.number doubleValue];
+				first = NO;
+			} else {
+				difference -= [((LiscNumber *)n).number doubleValue];
+			}			
+		}		
+		return (id)[LiscNumber numberWithNumber:[NSNumber numberWithDouble:difference]]; 
 	};
 	
-	[bindings setObject:[LiscFunction functionWithBlock:add withMinArgs:2] forKey:@"+"];
-	[bindings setObject:[LiscFunction functionWithBlock:subtract withMinArgs:2] forKey:@"-"];
+	[bindings setObject:[LiscFunction functionWithBlock:add] forKey:@"+"];
+	[bindings setObject:[LiscFunction functionWithBlock:subtract] forKey:@"-"];
 }
-
-
 
 @end

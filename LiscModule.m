@@ -7,7 +7,6 @@
 
 - (id)init {
 	if (self = [super init]) {
-		
 		self.bindings = [NSMutableDictionary dictionary];
 		[self setupBindings];
 	}

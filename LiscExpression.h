@@ -1,11 +1,15 @@
 
 #import <Cocoa/Cocoa.h>
-#import "LiscEnvironment.h"
 
-@protocol LiscExpression
+@class LiscEnvironment;
 
-- (id)eval:(LiscEnvironment *)env;
+//for our purposes an expression is anything that can be evaluated
+@interface LiscExpression : NSObject {
+
+}
+
+- (LiscExpression *)eval:(LiscEnvironment *)env;
 - (NSString *)toString;
-- (BOOL)isEqualToExpression:(id)exp;
+- (BOOL)isEqualToExpression:(LiscExpression *)exp;
 
 @end

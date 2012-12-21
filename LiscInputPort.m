@@ -1,21 +1,21 @@
 
 #import "LiscInputPort.h"
 #import "LiscEOF.h"
+#import "LiscBoolean.h"
+#import "LiscNumber.h"
+#import "LiscString.h"
+#import "LiscSymbol.h"
 #import "LiscNil.h"
-#import "NSString+Lisc.h"
-#import "RegexKitLite.h"
+#import "LiscList.h"
+#import "LiscError.h"
 
+#import "RegexKitLite.h"
 
 #define TOKENIZER @"\\s*(,@|[('`,)]|\"(?:[\\\\].|[^\\\\\"])*\"|;.*|[^\\s('\"`,;)]*)(.*)"
 
 @implementation LiscInputPort
 
 @synthesize lineBuffer;
-
-- (void)syntaxError:(NSString *)message {
-	@throw [NSException exceptionWithName:@"SyntaxError"
-								   reason:message  userInfo:nil];
-}
 
 //input streaming
 
@@ -27,9 +27,41 @@
 	return self;
 }
 
-- (void)dealloc {
-	self.lineBuffer = nil;
-	[super dealloc];
+- (LiscExpression *)atomFromToken:(NSString *)token {
+	
+	NSNumberFormatter *f = [NSNumberFormatter new];
+	NSNumber *number = [f numberFromString:token];
+	[f release];
+	
+	//number
+	if (number) {
+		return [LiscNumber numberWithNumber:number];
+	}
+	
+	//string
+	else if ([token hasPrefix:@"\""]) {
+		//return the string without the surrounding quotes
+		return [LiscString stringWithString:[token substringWithRange:NSMakeRange(1, [token length]-2)]];
+	}
+	
+	//true
+	else if ([token isEqualToString:@"true"]) {
+		return [LiscBoolean t];
+	}
+	
+	//false
+	else if ([token isEqualToString:@"false"]) {
+		return [LiscBoolean f];
+	}
+	
+	
+	//nil
+	else if ([token isEqualToString:@"nil"]) {
+		return [LiscNil _nil];
+	}
+	
+	//symbol
+	return [[[LiscSymbol alloc] initWithString:token] autorelease];
 }
 
 - (id)readLine {
@@ -78,28 +110,28 @@
 
 - (id)readAhead:(id)token {
 	if ([token isEqualToString:@"("]) {
-		NSMutableArray *list = [NSMutableArray array];
+		NSMutableArray *listArray = [NSMutableArray array];
 		
 		while (1) {
 			token = [self nextToken];
 			if ([token isEqualToString:@")"]) {
-				return list;
+				return [LiscList listWithArray:listArray];
 			} else {
-				[list addObject:[self readAhead:token]];
+				[listArray addObject:[self readAhead:token]];
 			}
 		}
 	} 
 	
 	else if ([token isEqualToString:@")"]) {
-		[self syntaxError:@"unexpected \")\""];
+		[LiscError raiseSyntaxError:@"unexpected \")\""];
 	}
 	
 	else if ([token isKindOfClass:[LiscEOF class]]) {
-		[self syntaxError:@"unexpected EOF"];
+		[LiscError raiseSyntaxError:@"unexpected EOF"];
 	}
 	
 	else {
-		return [token atom];
+		return [self atomFromToken:token];
 	}
 	
 	return nil;
@@ -114,6 +146,11 @@
 	else {
 		return [self readAhead:token];
 	}
+}
+
+- (void)dealloc {
+	self.lineBuffer = nil;
+	[super dealloc];
 }
 
 @end
