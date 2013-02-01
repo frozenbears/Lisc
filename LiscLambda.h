@@ -1,6 +1,5 @@
 
 #import <Foundation/Foundation.h>
-#import "LiscEvaluator.h"
 #import "LiscEnvironment.h"
 #import "LiscCallable.h"
 #import "LiscExpression.h"
