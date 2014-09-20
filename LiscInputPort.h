@@ -14,6 +14,6 @@
 - (id)nextToken;
 - (id)read;
 
-@property(nonatomic, retain) id lineBuffer;
+@property(nonatomic, strong) id lineBuffer;
 
 @end

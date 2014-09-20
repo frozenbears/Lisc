@@ -11,6 +11,6 @@
 - (void)addTest:(LiscTest *)test;
 - (BOOL)run;
 
-@property(nonatomic, retain) NSMutableArray *tests;
+@property(nonatomic, strong) NSMutableArray *tests;
 
 @end

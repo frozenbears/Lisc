@@ -4,7 +4,7 @@
 @implementation LiscNil
 
 + (LiscNil *)_nil {
-	return [[LiscNil new] autorelease];
+	return [LiscNil new];
 }
 
 - (NSString *)toString {

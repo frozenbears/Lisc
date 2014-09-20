@@ -8,7 +8,6 @@
 #import "LiscNil.h"
 #import "LiscList.h"
 #import "LiscError.h"
-
 #import "RegexKitLite.h"
 
 #define TOKENIZER @"\\s*(,@|[('`,)]|\"(?:[\\\\].|[^\\\\\"])*\"|;.*|[^\\s('\"`,;)]*)(.*)"
@@ -31,7 +30,6 @@
 	
 	NSNumberFormatter *f = [NSNumberFormatter new];
 	NSNumber *number = [f numberFromString:token];
-	[f release];
 	
 	//number
 	if (number) {
@@ -61,7 +59,7 @@
 	}
 	
 	//symbol
-	return [[[LiscSymbol alloc] initWithString:token] autorelease];
+	return [[LiscSymbol alloc] initWithString:token];
 }
 
 - (id)readLine {
@@ -148,9 +146,5 @@
 	}
 }
 
-- (void)dealloc {
-	self.lineBuffer = nil;
-	[super dealloc];
-}
 
 @end

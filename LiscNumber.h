@@ -9,6 +9,6 @@
 + (id)numberWithNumber:(NSNumber *)theNumber;
 - (id)initWithNumber:(NSNumber *)theNumber;
 
-@property(nonatomic, retain) NSNumber *number;
+@property(nonatomic, strong) NSNumber *number;
 
 @end

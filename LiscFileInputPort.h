@@ -6,7 +6,7 @@
 	NSFileHandle *handle;
 }
 
-@property(nonatomic, retain) NSFileHandle *handle;
+@property(nonatomic, strong) NSFileHandle *handle;
 
 - (id)initWithFile:(NSString *)path;
 - (id)initWithStdin;

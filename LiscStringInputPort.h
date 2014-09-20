@@ -9,6 +9,6 @@
 
 - (id)initWithString:(NSString *)inputString;
 
-@property(nonatomic, retain) NSMutableArray *lines;
+@property(nonatomic, strong) NSMutableArray *lines;
 
 @end

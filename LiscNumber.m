@@ -13,7 +13,7 @@
 }
 
 + (id)numberWithNumber:(NSNumber *)theNumber {
-	return [[[LiscNumber alloc] initWithNumber:theNumber] autorelease];
+	return [[LiscNumber alloc] initWithNumber:theNumber];
 }
 
 - (NSString *)toString {
@@ -29,9 +29,5 @@
 	}
 }
 
-- (void)dealloc {
-	self.number = nil;
-	[super dealloc];
-}
 
 @end

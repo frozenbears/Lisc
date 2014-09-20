@@ -4,7 +4,7 @@
 @implementation LiscEOF
 
 + (id)eof {
-	return [[LiscEOF new] autorelease];
+	return [LiscEOF new];
 }
 
 - (NSString *)toString {

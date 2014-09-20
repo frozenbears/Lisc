@@ -14,7 +14,7 @@
 		BOOL first = YES;
 		
 		[LiscArgs checkArgs:args 
-				  expecting:[NSArray arrayWithObjects:[LiscNumber class], [LiscNumber class], nil]
+				  expecting:@[[LiscNumber class], [LiscNumber class]]
 				   variadic:YES];
 		
 		for (LiscNumber *n in args) {
@@ -26,7 +26,7 @@
 			}
 		}
 				
-		return (id)[LiscNumber numberWithNumber:[NSNumber numberWithDouble:sum]]; 
+		return (id)[LiscNumber numberWithNumber:@(sum)]; 
 	};
 	
 	LiscCallBlock subtract = ^(NSArray *args) {
@@ -34,7 +34,7 @@
 		BOOL first = YES;
 		
 		[LiscArgs checkArgs:args 
-				  expecting:[NSArray arrayWithObjects:[LiscNumber class], [LiscNumber class], nil]
+				  expecting:@[[LiscNumber class], [LiscNumber class]]
 				   variadic:YES];
 		
 		for (LiscNumber *n in args) {
@@ -45,11 +45,11 @@
 				difference -= [((LiscNumber *)n).number doubleValue];
 			}			
 		}		
-		return (id)[LiscNumber numberWithNumber:[NSNumber numberWithDouble:difference]]; 
+		return (id)[LiscNumber numberWithNumber:@(difference)]; 
 	};
 	
-	[bindings setObject:[LiscFunction functionWithBlock:add] forKey:@"+"];
-	[bindings setObject:[LiscFunction functionWithBlock:subtract] forKey:@"-"];
+	bindings[@"+"] = [LiscFunction functionWithBlock:add];
+	bindings[@"-"] = [LiscFunction functionWithBlock:subtract];
 }
 
 @end

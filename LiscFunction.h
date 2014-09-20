@@ -5,12 +5,12 @@
 #import "LiscExpression.h"
 
 @interface LiscFunction : LiscExpression <LiscCallable> {
-	LiscCallBlock block;
+	LiscCallBlock __weak block;
 }
 
 + (LiscFunction *)functionWithBlock:(LiscCallBlock)b;
 - (id)initWithBlock:(LiscCallBlock)b;
 
-@property(nonatomic, assign) LiscCallBlock block;
+@property(nonatomic, weak) LiscCallBlock block;
 
 @end

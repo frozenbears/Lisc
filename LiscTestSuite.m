@@ -15,7 +15,7 @@
 }
 
 + (id)suite {
-	return [[[LiscTestSuite alloc] init] autorelease];
+	return [[LiscTestSuite alloc] init];
 }
 
 - (void)addTest:(LiscTest *)test {
@@ -29,14 +29,10 @@
 			passed++;
 		}
 	}
-	NSLog(@"%d/%d tests passed", passed, tests.count);
+	NSLog(@"%d/%lu tests passed", passed, (unsigned long)tests.count);
 	
 	return passed == tests.count;
 }
 
-- (void)dealloc {
-	self.tests = nil;
-	[super dealloc];
-}
 
 @end

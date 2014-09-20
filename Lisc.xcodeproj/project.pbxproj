@@ -11,7 +11,7 @@
 		0C070C94156A1665005D6BCC /* LiscEOF.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070C93156A1665005D6BCC /* LiscEOF.m */; };
 		0C070CD4156AC641005D6BCC /* LiscStringInputPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070CD3156AC641005D6BCC /* LiscStringInputPort.m */; };
 		0C070DFB156AED59005D6BCC /* LiscFileInputPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070DFA156AED59005D6BCC /* LiscFileInputPort.m */; };
-		0C269FDD153E9BB100D400AB /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C269FDC153E9BB100D400AB /* RegexKitLite.m */; };
+		0C269FDD153E9BB100D400AB /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C269FDC153E9BB100D400AB /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		0C300AB6147621DE007B6631 /* LiscBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C300AB5147621DE007B6631 /* LiscBoolean.m */; };
 		0C300AD5147625B3007B6631 /* LiscNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C300AD4147625B3007B6631 /* LiscNil.m */; };
 		0C36BF101473667F007A0F08 /* LiscSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C36BF0F1473667F007A0F08 /* LiscSymbol.m */; };
@@ -363,6 +363,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -379,6 +381,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

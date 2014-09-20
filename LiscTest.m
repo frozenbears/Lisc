@@ -21,7 +21,7 @@
 }
 
 + (id)testWithExpression:(LiscExpression *)theExpression expectingResult:(LiscExpression *)expectedResult {
-	return [[[LiscTest alloc] initWithExpression:theExpression expectingResult:expectedResult] autorelease];
+	return [[LiscTest alloc] initWithExpression:theExpression expectingResult:expectedResult];
 }
 
 - (id)initWithInputString:(NSString *)theInputString expectingResult:(NSString *)expectedResult {
@@ -34,14 +34,14 @@
 }
 
 + (id)testWithInputString:(NSString *)theInputString expectingResult:(NSString *)expectedResult {
-	return [[[LiscTest alloc] initWithInputString:theInputString expectingResult:expectedResult] autorelease];
+	return [[LiscTest alloc] initWithInputString:theInputString expectingResult:expectedResult];
 }
 
 - (BOOL)run {
 	@try {
 		if (inputString) {
-			LiscStringInputPort *inport = [[[LiscStringInputPort alloc] initWithString:inputString] autorelease];
-			LiscStringInputPort *expectedPort = [[[LiscStringInputPort alloc] initWithString:expectedString] autorelease];
+			LiscStringInputPort *inport = [[LiscStringInputPort alloc] initWithString:inputString];
+			LiscStringInputPort *expectedPort = [[LiscStringInputPort alloc] initWithString:expectedString];
 			
 			LiscExpression *exp = nil;
 			
@@ -73,13 +73,5 @@
 	}
 }
 
-- (void)dealloc {
-	self.environment = nil;
-	self.expression = nil;
-	self.expectedExpression = nil;
-	self.inputString = nil;
-	self.expectedString = nil;
-	[super dealloc];
-}
 
 @end

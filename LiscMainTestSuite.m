@@ -16,7 +16,7 @@
 }
 
 + (id)suite {
-	return [[[LiscMainTestSuite alloc] init] autorelease];
+	return [[LiscMainTestSuite alloc] init];
 }
 
 - (void)configure {

@@ -6,7 +6,7 @@
 	NSString *string;
 }
 
-@property(nonatomic, retain) NSString *string;
+@property(nonatomic, strong) NSString *string;
 
 + (id)stringWithString:(NSString *)theString;
 - (id)initWithString:(NSString *)theString;

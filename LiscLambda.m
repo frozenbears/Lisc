@@ -25,16 +25,10 @@
 
 //calling a lambda then simply means evaluating the expression within the enclosing scope
 - (LiscExpression *)callWithArgs:(NSArray *)args {
-	LiscEnvironment *enclosingEnvironment = [[[LiscEnvironment alloc] initWithParams:names args:args outer:environment] autorelease];
+	LiscEnvironment *enclosingEnvironment = [[LiscEnvironment alloc] initWithParams:names args:args outer:environment];
     id result = [expression eval:enclosingEnvironment];
     return result;
 }
 
-- (void)dealloc {
-    self.environment = nil;
-    self.expression = nil;
-    self.names = nil;
-    [super dealloc];
-}
 
 @end

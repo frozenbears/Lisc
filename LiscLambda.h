@@ -13,8 +13,8 @@
 
 - (id)initWithVars:(NSArray *)vars expression:(id)exp environment:(LiscEnvironment *)env;
 
-@property(nonatomic, retain) LiscEnvironment *environment;
-@property(nonatomic, retain) NSMutableArray *names;
-@property(nonatomic, retain) id expression;
+@property(nonatomic, strong) LiscEnvironment *environment;
+@property(nonatomic, strong) NSMutableArray *names;
+@property(nonatomic, strong) id expression;
 
 @end

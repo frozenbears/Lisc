@@ -11,6 +11,6 @@
 - (void)setupBindings;
 - (void)addBindingWithName:(NSString *)name withFunction:(LiscFunction *)function;
 
-@property(nonatomic, retain) NSMutableDictionary *bindings;
+@property(nonatomic, strong) NSMutableDictionary *bindings;
 
 @end

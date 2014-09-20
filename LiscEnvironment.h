@@ -17,7 +17,7 @@
 - (void)setWithVar:(NSString *)var expression:(LiscExpression *)exp;
 - (void)defineWithVar:(NSString *)var expression:(LiscExpression *)exp;
 
-@property(nonatomic, retain) NSMutableDictionary *dict;
-@property(nonatomic, retain) LiscEnvironment *outer;
+@property(nonatomic, strong) NSMutableDictionary *dict;
+@property(nonatomic, strong) LiscEnvironment *outer;
 
 @end

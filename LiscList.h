@@ -7,7 +7,7 @@
 	NSMutableArray *array;
 }
 
-@property(nonatomic, retain) NSArray *array;
+@property(nonatomic, strong) NSArray *array;
 
 - (id)initWithArray:(NSArray *)theArray;
 + (id)listWithArray:(NSArray *)theArray;

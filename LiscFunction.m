@@ -7,7 +7,7 @@
 @synthesize block;
 
 + (LiscFunction *)functionWithBlock:(LiscCallBlock)b {
-	return [[[LiscFunction alloc] initWithBlock:b] autorelease];
+	return [[LiscFunction alloc] initWithBlock:b];
 }
 
 - (id)initWithBlock:(LiscCallBlock)b {
@@ -24,7 +24,6 @@
 
 - (void)dealloc {
 	self.block = nil;
-	[super dealloc];
 }
 
 @end

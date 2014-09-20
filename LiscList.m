@@ -21,7 +21,7 @@
 }
 
 + (id)listWithArray:(NSArray *)theArray {
-	return [[[LiscList alloc] initWithArray:theArray] autorelease];
+	return [[LiscList alloc] initWithArray:theArray];
 }
 
 //list evaluation can mean lots of things depending on context
@@ -31,28 +31,28 @@
 	if (!array.count) return self;
 	
 	//the head sets the agenda
-	LiscExpression *head = [array objectAtIndex:0];
+	LiscExpression *head = array[0];
 	
 	if ([head isKindOfClass:LiscSymbol.class]) {
 		NSString *s = ((LiscSymbol *)head).name;
-		NSArray *args = [NSArray array];
+		NSArray *args = @[];
 		if (array.count > 1) {
 			args = [array subarrayWithRange:NSMakeRange(1, array.count-1)];
 		}
 		
 		//"quote" prevents the subsequent thing from being evaluated
 		if ([s isEqualToString:@"quote"]) {
-			[LiscArgs checkArgs:args expecting:[NSArray arrayWithObjects:[LiscExpression class],nil]];
-			return [args objectAtIndex:0];
+			[LiscArgs checkArgs:args expecting:@[[LiscExpression class]]];
+			return args[0];
 		} else if ([s isEqualToString:@"if"]) {
-			[LiscArgs checkArgs:args expecting:[NSArray arrayWithObjects:[LiscExpression class], [LiscExpression class], [LiscExpression class], nil]];
+			[LiscArgs checkArgs:args expecting:@[[LiscExpression class], [LiscExpression class], [LiscExpression class]]];
 			
 			//the thing that may or may not be true
-			LiscExpression *test = [args objectAtIndex:0];
+			LiscExpression *test = args[0];
 			//the thing to be evaluated if so
-			LiscExpression *conseq = [args objectAtIndex:1];
+			LiscExpression *conseq = args[1];
 			//the thing to be evaluated if not
-			LiscExpression *alt = [args objectAtIndex:2];
+			LiscExpression *alt = args[2];
 			
 			LiscExpression *result = [test eval:env];
 			
@@ -78,14 +78,14 @@
 			}
 			
 		} else if ([s isEqualToString:@"set!"]) {
-			[LiscArgs checkArgs:args expecting:[NSArray arrayWithObjects:[LiscSymbol class], [LiscExpression class], nil]];
-			LiscSymbol *var = [args objectAtIndex:0];
-			LiscExpression *exp = [args objectAtIndex:1];
+			[LiscArgs checkArgs:args expecting:@[[LiscSymbol class], [LiscExpression class]]];
+			LiscSymbol *var = args[0];
+			LiscExpression *exp = args[1];
 			[env setWithVar:var.name expression:[exp eval:env]];
 		} else if ([s isEqualToString:@"define"]) {
-			[LiscArgs checkArgs:args expecting:[NSArray arrayWithObjects:[LiscSymbol class], [LiscExpression class], nil]];
-			LiscSymbol *var = [args objectAtIndex:0];
-			LiscExpression *exp = [args objectAtIndex:1];
+			[LiscArgs checkArgs:args expecting:@[[LiscSymbol class], [LiscExpression class]]];
+			LiscSymbol *var = args[0];
+			LiscExpression *exp = args[1];
 			[env defineWithVar:var.name expression:[exp eval:env]];
 		} else if ([s isEqualToString:@"do"]) {
 			if (args.count == 0) return [LiscNil _nil];
@@ -96,13 +96,13 @@
 			return val;
 		} else if([s isEqualToString:@"lambda"]) {
 			//lambda!! <3 <3 <3
-			[LiscArgs checkArgs:args expecting:[NSArray arrayWithObjects:[LiscList class], [LiscExpression class], nil]];
+			[LiscArgs checkArgs:args expecting:@[[LiscList class], [LiscExpression class]]];
 			
-			LiscList *vars = [args objectAtIndex:0];
-			LiscExpression *exp = [args objectAtIndex:1];
-			LiscLambda *lambda = [[[LiscLambda alloc] initWithVars:vars.array 
+			LiscList *vars = args[0];
+			LiscExpression *exp = args[1];
+			LiscLambda *lambda = [[LiscLambda alloc] initWithVars:vars.array 
 														expression:exp
-													   environment:env] autorelease];
+													   environment:env];
 			return lambda;
 		} else {
 			//procedure call
@@ -113,7 +113,7 @@
 				[exps addObject:[exp eval:env]];
 			}
 			
-			LiscExpression *proc = [exps objectAtIndex:0];
+			LiscExpression *proc = exps[0];
 			if ([proc conformsToProtocol:@protocol(LiscCallable)]) {
 				//pop the head
 				[exps removeObjectAtIndex:0];
@@ -151,7 +151,7 @@
 			listString = [listString stringByAppendingString:@" "];
 		} 
 		
-		listString = [listString stringByAppendingString:[[array objectAtIndex:i]toString]];
+		listString = [listString stringByAppendingString:[array[i]toString]];
 	}
 	
 	listString = [listString stringByAppendingString:@")"];
@@ -165,8 +165,8 @@
 		int count = ((LiscList *)exp).array.count;
 		if (array.count == count) {
 			for (int i = 0; i<count; i++) {
-				LiscExpression *left = [array objectAtIndex:i];
-				LiscExpression *right = [((LiscList *)exp).array objectAtIndex:i];
+				LiscExpression *left = array[i];
+				LiscExpression *right = (((LiscList *)exp).array)[i];
 				if (![left isEqualToExpression:right]) {
 					result = NO;
 				}
@@ -181,10 +181,6 @@
 }
 
 
-- (void)dealloc {
-	self.array = nil;
-	[super dealloc];
-}
 
 
 @end

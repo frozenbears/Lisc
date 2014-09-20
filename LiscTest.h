@@ -18,9 +18,9 @@
 + (id)testWithInputString:(NSString *)theInputString expectingResult:(NSString *)expectedResult;
 - (BOOL)run;
 
-@property(nonatomic, retain) LiscEnvironment *environment;
-@property(nonatomic, retain) LiscExpression *expression;
-@property(nonatomic, retain) LiscExpression *expectedExpression;
+@property(nonatomic, strong) LiscEnvironment *environment;
+@property(nonatomic, strong) LiscExpression *expression;
+@property(nonatomic, strong) LiscExpression *expectedExpression;
 @property(nonatomic, copy) NSString *inputString;
 @property(nonatomic, copy) NSString *expectedString;
 

@@ -14,17 +14,13 @@
 	return self;
 }
 
-- (void)dealloc {
-	self.bindings = nil;
-	[super dealloc];
-}
 
 //override to customize
 - (void)setupBindings {
 }
 
 - (void)addBindingWithName:(NSString *)name withFunction:(LiscFunction *)function {
-	[bindings setObject:function forKey:name];
+	bindings[name] = function;
 }
 
 @end

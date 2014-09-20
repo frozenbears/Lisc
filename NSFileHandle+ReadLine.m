@@ -89,7 +89,7 @@
     }
 	
     NSString* line = [[NSString alloc] initWithData:currentData encoding:NSASCIIStringEncoding];
-    return [line autorelease];
+    return line;
 }
 
 @end

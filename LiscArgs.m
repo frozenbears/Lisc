@@ -10,24 +10,24 @@
 	// Note: this means we're effectively ignoring all additional values, which may not actually be desirable
 	if (args.count < expected.count) {
 		NSString *atLeast = variadic ? @"at least " : @"";
-		NSString *errorString = [NSString stringWithFormat:@"Type Error: expected %@%d arguments and received %d", atLeast, expected.count, args.count]; 
+		NSString *errorString = [NSString stringWithFormat:@"Type Error: expected %@%lu arguments and received %lu", atLeast, (unsigned long)expected.count, (unsigned long)args.count];
 		[LiscError raiseTypeError:errorString];
 	}
 	
 	//if we have enough arguments, iterate through and compare types
 	for (int i = 0; i < args.count; i++) {
-		LiscExpression *exp = [args objectAtIndex:i];
+		LiscExpression *exp = args[i];
 		Class type;
 		if (i > expected.count-1) {
 			if (variadic) {
 				//if this is a variadic expression, we only care about the last known type
-				type = [expected objectAtIndex:expected.count-1];
+				type = expected[expected.count-1];
 			} else {
 				//otherwise there's no point in further checking
 				break;
 			}
 		} else {
-			type = [expected objectAtIndex:i];
+			type = expected[i];
 		}
 		if (![exp isKindOfClass:type]) {
 			NSString *errorString = [NSString stringWithFormat:@"Type Error: expected type %@ and received %@", type, exp]; 

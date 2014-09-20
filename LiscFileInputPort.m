@@ -24,11 +24,11 @@
 }
 
 + (LiscFileInputPort *)portWithFile:(NSString *)path {
-	return [[[LiscFileInputPort alloc] initWithFile:path] autorelease];
+	return [[LiscFileInputPort alloc] initWithFile:path];
 }
 
 + (LiscFileInputPort *)portWithStdin {
-	return [[[LiscFileInputPort alloc] initWithStdin] autorelease];
+	return [[LiscFileInputPort alloc] initWithStdin];
 }
 
 - (id)readLine {
@@ -37,9 +37,5 @@
 	return line;
 }
 
-- (void)dealloc {
-	self.handle = nil;
-	[super dealloc];
-}
 
 @end

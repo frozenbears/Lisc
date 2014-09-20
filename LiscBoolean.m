@@ -6,13 +6,13 @@
 @synthesize value;
 
 + (id)t {
-	LiscBoolean *b = [[[LiscBoolean alloc]init] autorelease];
+	LiscBoolean *b = [[LiscBoolean alloc]init];
 	b.value = YES;
 	return b;
 }
 
 + (id)f {
-	LiscBoolean *b = [[[LiscBoolean alloc]init] autorelease];
+	LiscBoolean *b = [[LiscBoolean alloc]init];
 	b.value = NO;
 	return b;
 }

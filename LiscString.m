@@ -14,7 +14,7 @@
 }
 
 + (id)stringWithString:(NSString *)theString {
-	return [[[LiscString alloc] initWithString:theString] autorelease];
+	return [[LiscString alloc] initWithString:theString];
 }
 
 - (NSString *)toString {
@@ -32,9 +32,5 @@
 	}
 }
 
-- (void)dealloc {
-	self.string = nil;
-	[super dealloc];
-}
 
 @end

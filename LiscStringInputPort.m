@@ -17,7 +17,7 @@
 
 - (id)readLine {
 	if (lines.count) {
-		NSString *line = [lines objectAtIndex:0];
+		NSString *line = lines[0];
 		[lines removeObjectAtIndex:0];
 		return line;
 	} else {
@@ -25,9 +25,5 @@
 	}
 }
 
-- (void)dealloc {
-	self.lines = nil;
-	[super dealloc];
-}
 
 @end
