@@ -3,9 +3,7 @@
 #import "LiscExpression.h"
 #import "LiscEnvironment.h"
 
-@interface LiscSymbol : LiscExpression {
-	NSString *name;
-}
+@interface LiscSymbol : LiscExpression
 
 - (id)initWithString:(NSString *)string;
 

@@ -2,10 +2,7 @@
 #import <Cocoa/Cocoa.h>
 #import "LiscTest.h"
 
-@interface LiscTestSuite : NSObject {
-
-	NSMutableArray *tests;
-}
+@interface LiscTestSuite : NSObject
 
 + (id)suite;
 - (void)addTest:(LiscTest *)test;

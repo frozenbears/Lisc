@@ -2,8 +2,5 @@
 #import <Cocoa/Cocoa.h>
 #import "LiscTestSuite.h"
 
-@interface LiscMainTestSuite : LiscTestSuite {
-
-}
-
+@interface LiscMainTestSuite : LiscTestSuite
 @end

@@ -2,9 +2,7 @@
 #import <Cocoa/Cocoa.h>
 #import "LiscExpression.h"
 
-@interface LiscInputPort : LiscExpression {
-	id lineBuffer;
-}
+@interface LiscInputPort : LiscExpression
 
 //input streaming
 - (id)readLine;

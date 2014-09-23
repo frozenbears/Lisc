@@ -2,9 +2,7 @@
 #import <Cocoa/Cocoa.h>
 #import "LiscInputPort.h"
 
-@interface LiscFileInputPort : LiscInputPort {
-	NSFileHandle *handle;
-}
+@interface LiscFileInputPort : LiscInputPort
 
 @property(nonatomic, strong) NSFileHandle *handle;
 

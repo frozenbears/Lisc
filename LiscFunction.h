@@ -4,9 +4,7 @@
 #import "LiscCallBlock.h"
 #import "LiscExpression.h"
 
-@interface LiscFunction : LiscExpression <LiscCallable> {
-	LiscCallBlock __weak block;
-}
+@interface LiscFunction : LiscExpression <LiscCallable>
 
 + (LiscFunction *)functionWithBlock:(LiscCallBlock)b;
 - (id)initWithBlock:(LiscCallBlock)b;

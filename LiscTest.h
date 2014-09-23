@@ -3,14 +3,7 @@
 #import "LiscEnvironment.h"
 #import "LiscExpression.h"
 
-@interface LiscTest : NSObject {
-	
-	LiscEnvironment *environment;
-	LiscExpression *expression;
-	LiscExpression *expectedExpression;
-	NSString *inputString;
-	NSString *expectedString;
-}
+@interface LiscTest : NSObject
 
 - (id)initWithExpression:(LiscExpression *)theExpression expectingResult:(LiscExpression *)expectedResult;
 + (id)testWithExpression:(LiscExpression *)theExpression expectingResult:(LiscExpression *)expectedResult;

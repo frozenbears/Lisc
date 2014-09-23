@@ -3,10 +3,7 @@
 #import "LiscModule.h"
 #import "LiscExpression.h"
 
-@interface LiscEnvironment : NSObject {
-	NSMutableDictionary *dict; //where we store all the bindings
-	LiscEnvironment *outer; //an optional outer environment, for keeping track of scope
-}
+@interface LiscEnvironment : NSObject
 
 + (LiscEnvironment *)globalEnvironment; //use this to make a brand new one with no outer scope
 

@@ -1,8 +1,5 @@
 
 #import "LiscModule.h"
 
-@interface LiscMathModule : LiscModule {
-
-}
-
+@interface LiscMathModule : LiscModule
 @end

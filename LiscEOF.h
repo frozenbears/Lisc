@@ -2,9 +2,7 @@
 #import <Cocoa/Cocoa.h>
 #import "LiscExpression.h"
 
-@interface LiscEOF : LiscExpression {
-
-}
+@interface LiscEOF : LiscExpression
 
 + (id)eof;
 - (NSString *)toString;

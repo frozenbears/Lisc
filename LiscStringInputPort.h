@@ -2,10 +2,7 @@
 #import <Cocoa/Cocoa.h>
 #import "LiscInputPort.h"
 
-@interface LiscStringInputPort : LiscInputPort {
-	
-	NSMutableArray *lines;
-}
+@interface LiscStringInputPort : LiscInputPort
 
 - (id)initWithString:(NSString *)inputString;
 

@@ -2,9 +2,7 @@
 #import <Cocoa/Cocoa.h>
 #import "LiscExpression.h"
 
-@interface LiscNumber : LiscExpression {
-	NSNumber *number;
-}
+@interface LiscNumber : LiscExpression
 
 + (id)numberWithNumber:(NSNumber *)theNumber;
 - (id)initWithNumber:(NSNumber *)theNumber;

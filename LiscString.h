@@ -2,9 +2,7 @@
 #import <Cocoa/Cocoa.h>
 #import "LiscExpression.h"
 
-@interface LiscString : LiscExpression {
-	NSString *string;
-}
+@interface LiscString : LiscExpression
 
 @property(nonatomic, strong) NSString *string;
 

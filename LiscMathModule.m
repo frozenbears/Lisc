@@ -48,8 +48,8 @@
 		return (id)[LiscNumber numberWithNumber:@(difference)]; 
 	};
 	
-	bindings[@"+"] = [LiscFunction functionWithBlock:add];
-	bindings[@"-"] = [LiscFunction functionWithBlock:subtract];
+	self.bindings[@"+"] = [LiscFunction functionWithBlock:add];
+	self.bindings[@"-"] = [LiscFunction functionWithBlock:subtract];
 }
 
 @end

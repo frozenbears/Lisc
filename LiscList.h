@@ -2,10 +2,7 @@
 #import <Cocoa/Cocoa.h>
 #import "LiscExpression.h"
 
-@interface LiscList : LiscExpression {
-
-	NSMutableArray *array;
-}
+@interface LiscList : LiscExpression
 
 @property(nonatomic, strong) NSArray *array;
 

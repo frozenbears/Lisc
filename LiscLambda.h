@@ -4,17 +4,12 @@
 #import "LiscCallable.h"
 #import "LiscExpression.h"
 
-@interface LiscLambda : LiscExpression <LiscCallable> {
-    
-    LiscEnvironment *environment;
-	NSMutableArray *names; //of NSString
-    id expression;
-}
+@interface LiscLambda : LiscExpression <LiscCallable>
 
 - (id)initWithVars:(NSArray *)vars expression:(id)exp environment:(LiscEnvironment *)env;
 
 @property(nonatomic, strong) LiscEnvironment *environment;
-@property(nonatomic, strong) NSMutableArray *names;
+@property(nonatomic, strong) NSMutableArray *names; //of NSString;
 @property(nonatomic, strong) id expression;
 
 @end

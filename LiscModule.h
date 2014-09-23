@@ -3,10 +3,7 @@
 #import <Block.h>
 #import "LiscFunction.h"
 
-@interface LiscModule : NSObject {
-	
-	NSMutableDictionary *bindings; //NSString --> LiscFunction
-}
+@interface LiscModule : NSObject
 
 - (void)setupBindings;
 - (void)addBindingWithName:(NSString *)name withFunction:(LiscFunction *)function;
