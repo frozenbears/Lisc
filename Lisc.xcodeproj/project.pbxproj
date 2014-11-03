@@ -372,6 +372,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Lisc_Prefix.pch;
 				INSTALL_PATH = /usr/local/bin;
+				OTHER_CFLAGS = "-fobjc-arc-exceptions";
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = Lisc;
 			};
@@ -388,6 +389,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Lisc_Prefix.pch;
 				INSTALL_PATH = /usr/local/bin;
+				OTHER_CFLAGS = "-fobjc-arc-exceptions";
 				PRODUCT_NAME = Lisc;
 			};
 			name = Release;
