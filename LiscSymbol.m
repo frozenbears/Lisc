@@ -30,7 +30,7 @@
 	return retval;
 }
 
-- (NSString *)toString {
+- (NSString *)print {
 	return self.name;
 }
 

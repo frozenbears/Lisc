@@ -7,7 +7,7 @@
 @interface LiscExpression : NSObject
 
 - (LiscExpression *)eval:(LiscEnvironment *)env;
-- (NSString *)toString;
+- (NSString *)print;
 - (BOOL)isEqualToExpression:(LiscExpression *)exp;
 
 @end

@@ -17,7 +17,7 @@
 	return b;
 }
 
-- (NSString *)toString {
+- (NSString *)print {
 	if (self.value) {
 		return @"true";
 	} else {

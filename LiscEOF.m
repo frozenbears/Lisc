@@ -7,7 +7,7 @@
 	return [LiscEOF new];
 }
 
-- (NSString *)toString {
+- (NSString *)print {
 	return @"#EOF#";
 }
 

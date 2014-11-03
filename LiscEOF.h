@@ -5,6 +5,6 @@
 @interface LiscEOF : LiscExpression
 
 + (id)eof;
-- (NSString *)toString;
+- (NSString *)print;
 
 @end

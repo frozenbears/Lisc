@@ -39,7 +39,7 @@
 			if ([exp isKindOfClass:[LiscString class]]) {
 				output = [output stringByAppendingString:((LiscString *)exp).string];
 			} else {
-				output = [output stringByAppendingString:[args[i]toString]];
+				output = [output stringByAppendingString:[args[i] print]];
 			}
 		}
 		

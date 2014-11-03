@@ -141,7 +141,7 @@
 	return [LiscNil _nil];
 }
 
-- (NSString *)toString {
+- (NSString *)print {
 	
 	NSString *listString = @"(";
 	
@@ -151,7 +151,7 @@
 			listString = [listString stringByAppendingString:@" "];
 		} 
 		
-		listString = [listString stringByAppendingString:[array[i]toString]];
+		listString = [listString stringByAppendingString:[array[i] print]];
 	}
 	
 	listString = [listString stringByAppendingString:@")"];

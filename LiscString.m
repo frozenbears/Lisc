@@ -17,7 +17,7 @@
 	return [[LiscString alloc] initWithString:theString];
 }
 
-- (NSString *)toString {
+- (NSString *)print {
 	NSString *output = @"\"";
 	output = [output stringByAppendingString:string];
 	output = [output stringByAppendingString:@"\""];

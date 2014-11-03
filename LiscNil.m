@@ -7,7 +7,7 @@
 	return [LiscNil new];
 }
 
-- (NSString *)toString {
+- (NSString *)print {
 	return @"nil";
 }
 

@@ -8,7 +8,7 @@
 	return self;
 }
 
-- (NSString *)toString {
+- (NSString *)print {
 	return [self description];
 }
 

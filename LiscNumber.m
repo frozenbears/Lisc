@@ -16,7 +16,7 @@
 	return [[LiscNumber alloc] initWithNumber:theNumber];
 }
 
-- (NSString *)toString {
+- (NSString *)print {
 	return [NSString stringWithFormat:@"%g", [number doubleValue]];
 }
 

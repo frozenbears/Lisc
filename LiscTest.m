@@ -58,16 +58,16 @@
 			LiscExpression *exp2 = [[expectedPort read] eval:environment];
 			
 			BOOL result = [exp isEqualToExpression:exp2];
-			NSLog(@"%@ => %@, expecting %@: %@", inputString, [exp toString], [exp2 toString], result ? @"PASS" : @"FAIL");
+			NSLog(@"%@ => %@, expecting %@: %@", inputString, [exp print], [exp2 print], result ? @"PASS" : @"FAIL");
 			return result;
 		} else {
 			BOOL result = [[expression eval:environment] isEqualToExpression:expectedExpression];
-			NSLog(@"%@ => %@, expecting %@: %@", [expression toString], [expectedExpression toString], [expectedExpression toString], result ? @"PASS" : @"FAIL" );
+			NSLog(@"%@ => %@, expecting %@: %@", [expression print], [expectedExpression print], [expectedExpression print], result ? @"PASS" : @"FAIL" );
 			return result;
 		}
 	} @catch (NSException *e) {
-		NSString *test = inputString ? : [expression toString];
-		NSString *expected = expectedString ? : [expectedExpression toString];
+		NSString *test = inputString ? : [expression print];
+		NSString *expected = expectedString ? : [expectedExpression print];
 		NSLog(@"%@, expecting %@: %@, %@", test, expected, e.description, @"FAIL");
 		return NO;
 	}
