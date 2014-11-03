@@ -2,6 +2,7 @@
 #import "LiscTest.h"
 #import "LiscStringInputPort.h"
 #import "LiscEOF.h"
+#import "LiscError.h"
 
 @implementation LiscTest
 
@@ -66,6 +67,9 @@
 			return result;
 		}
 	} @catch (NSException *e) {
+        if (![e isKindOfClass:[LiscError class]]) {
+            @throw;
+        }
 		NSString *test = inputString ? : [expression print];
 		NSString *expected = expectedString ? : [expectedExpression print];
 		NSLog(@"%@, expecting %@: %@, %@", test, expected, e.description, @"FAIL");

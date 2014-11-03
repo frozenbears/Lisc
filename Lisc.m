@@ -4,6 +4,7 @@
 #import "LiscExpression.h"
 #import "LiscFileInputPort.h"
 #import "LiscEOF.h"
+#import "liscError.h"
 
 int main (int argc, const char * argv[]) {
     @autoreleasepool {
@@ -38,6 +39,10 @@ int main (int argc, const char * argv[]) {
 					[output writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
 				}
 			} @catch (NSException *e) {
+                if (![e isKindOfClass:[LiscError class]]) {
+                    @throw;
+                }
+
 				[output writeData:[e.description dataUsingEncoding:NSUTF8StringEncoding]];
 				[output writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
 			}
