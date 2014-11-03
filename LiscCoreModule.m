@@ -96,8 +96,8 @@
         return (id)[LiscNil _nil];      
     };
     
-    self.self.bindings[@"is"] = [LiscFunction functionWithBlock:is];
-    self.self.bindings[@"print"] = [LiscFunction functionWithBlock:print];
+    self.bindings[@"is"] = [LiscFunction functionWithBlock:is];
+    self.bindings[@"print"] = [LiscFunction functionWithBlock:print];
     self.bindings[@"first"] = [LiscFunction functionWithBlock:first];
     self.bindings[@"last"] = [LiscFunction functionWithBlock:last];
     self.bindings[@"rest"] = [LiscFunction functionWithBlock:rest];
