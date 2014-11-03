@@ -7,23 +7,23 @@
 @synthesize block;
 
 + (LiscFunction *)functionWithBlock:(LiscCallBlock)b {
-	return [[LiscFunction alloc] initWithBlock:b];
+    return [[LiscFunction alloc] initWithBlock:b];
 }
 
 - (id)initWithBlock:(LiscCallBlock)b {
-	if (self = [super init]) {
-		self.block = b;
-	}
-	
-	return self;
+    if (self = [super init]) {
+        self.block = b;
+    }
+    
+    return self;
 }
 
 - (LiscExpression *)callWithArgs:(NSArray *)args {
-	return block(args);
+    return block(args);
 }
 
 - (void)dealloc {
-	self.block = nil;
+    self.block = nil;
 }
 
 @end

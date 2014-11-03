@@ -6,12 +6,12 @@
 @synthesize bindings;
 
 - (id)init {
-	if (self = [super init]) {
-		self.bindings = [NSMutableDictionary dictionary];
-		[self setupBindings];
-	}
-	
-	return self;
+    if (self = [super init]) {
+        self.bindings = [NSMutableDictionary dictionary];
+        [self setupBindings];
+    }
+    
+    return self;
 }
 
 
@@ -20,7 +20,7 @@
 }
 
 - (void)addBindingWithName:(NSString *)name withFunction:(LiscFunction *)function {
-	bindings[name] = function;
+    bindings[name] = function;
 }
 
 @end

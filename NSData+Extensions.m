@@ -31,13 +31,13 @@
  @returns A range.
  */
 - (NSRange)rangeOfData:(NSData*)dataToFind {
-	
+    
     const void* bytes = [self bytes];
     NSUInteger length = [self length];
     const void* searchBytes = [dataToFind bytes];
     NSUInteger searchLength = [dataToFind length];
     NSUInteger searchIndex = 0;
-	
+    
     NSRange foundRange = {NSNotFound, searchLength};
     for (NSUInteger index = 0; index < length; index++) {
         // The current character matches.
@@ -67,19 +67,19 @@
 
 
 - (NSRange)rangeOfDataBackwardsSearch:(NSData*)dataToFind {
-	
+    
     const void* bytes = [self bytes];
     NSUInteger length = [self length];
     const void* searchBytes = [dataToFind bytes];
     NSUInteger searchLength = [dataToFind length];
     NSUInteger searchIndex = 0;
-	
+    
     NSRange foundRange = {NSNotFound, searchLength};
     if (length < searchLength) {
         return foundRange;
     }
     for (NSInteger index = length - searchLength; index >= 0;) {
-		//      NSLog(@"%c == %c", ((char*)bytes)[index], ((char*)searchBytes)[searchIndex]); /* DEBUG LOG */
+        //      NSLog(@"%c == %c", ((char*)bytes)[index], ((char*)searchBytes)[searchIndex]); /* DEBUG LOG */
         if (((char*)bytes)[index] == ((char*)searchBytes)[searchIndex]) {
             // The current character matches.
             if (foundRange.location == NSNotFound) {
@@ -140,8 +140,8 @@
  @param data Data to be prepended.
  */
 - (void)prepend:(NSData*)data {
-	
-	
+    
+    
     NSMutableData* concat = [NSMutableData dataWithData:data];
     [concat appendData:self];
     [self setData:concat];

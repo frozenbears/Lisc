@@ -4,15 +4,15 @@
 @implementation LiscNil
 
 + (LiscNil *)_nil {
-	return [LiscNil new];
+    return [LiscNil new];
 }
 
 - (NSString *)print {
-	return @"nil";
+    return @"nil";
 }
 
 - (BOOL)isEqualToExpression:(LiscExpression *)exp {
-	return [self isMemberOfClass:[exp class]];
+    return [self isMemberOfClass:[exp class]];
 }
 
 @end
