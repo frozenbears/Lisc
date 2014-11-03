@@ -11,7 +11,6 @@
 		0C070C94156A1665005D6BCC /* LiscEOF.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070C93156A1665005D6BCC /* LiscEOF.m */; };
 		0C070CD4156AC641005D6BCC /* LiscStringInputPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070CD3156AC641005D6BCC /* LiscStringInputPort.m */; };
 		0C070DFB156AED59005D6BCC /* LiscFileInputPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070DFA156AED59005D6BCC /* LiscFileInputPort.m */; };
-		0C269FDD153E9BB100D400AB /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C269FDC153E9BB100D400AB /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		0C300AB6147621DE007B6631 /* LiscBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C300AB5147621DE007B6631 /* LiscBoolean.m */; };
 		0C300AD5147625B3007B6631 /* LiscNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C300AD4147625B3007B6631 /* LiscNil.m */; };
 		0C36BF101473667F007A0F08 /* LiscSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C36BF0F1473667F007A0F08 /* LiscSymbol.m */; };
@@ -61,8 +60,6 @@
 		0C070CD3156AC641005D6BCC /* LiscStringInputPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscStringInputPort.m; sourceTree = "<group>"; };
 		0C070DF9156AED59005D6BCC /* LiscFileInputPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscFileInputPort.h; sourceTree = "<group>"; };
 		0C070DFA156AED59005D6BCC /* LiscFileInputPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscFileInputPort.m; sourceTree = "<group>"; };
-		0C269FDB153E9BB100D400AB /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
-		0C269FDC153E9BB100D400AB /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		0C300AB4147621DE007B6631 /* LiscBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscBoolean.h; sourceTree = "<group>"; };
 		0C300AB5147621DE007B6631 /* LiscBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscBoolean.m; sourceTree = "<group>"; };
 		0C300AD3147625B3007B6631 /* LiscNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscNil.h; sourceTree = "<group>"; };
@@ -149,7 +146,6 @@
 				0C36EB66153A56680023D73C /* Protocols */,
 				0C36EB65153A55510023D73C /* Types */,
 				0C36EB64153A54FE0023D73C /* Categories */,
-				0C269FDF153E9BB900D400AB /* Helpers */,
 				0C36EB68153A57000023D73C /* Other Sources */,
 			);
 			name = Source;
@@ -161,15 +157,6 @@
 				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
 			);
 			name = "External Frameworks and Libraries";
-			sourceTree = "<group>";
-		};
-		0C269FDF153E9BB900D400AB /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				0C269FDB153E9BB100D400AB /* RegexKitLite.h */,
-				0C269FDC153E9BB100D400AB /* RegexKitLite.m */,
-			);
-			name = Helpers;
 			sourceTree = "<group>";
 		};
 		0C36EB64153A54FE0023D73C /* Categories */ = {
@@ -339,7 +326,6 @@
 				0CCEC1B01480559B00D6B4F2 /* NSFileHandle+ReadLine.m in Sources */,
 				0CCEC1B3148055D200D6B4F2 /* NSData+Extensions.m in Sources */,
 				0C36EB63153A53790023D73C /* LiscCoreModule.m in Sources */,
-				0C269FDD153E9BB100D400AB /* RegexKitLite.m in Sources */,
 				0C070C91156A12D5005D6BCC /* LiscInputPort.m in Sources */,
 				0C070C94156A1665005D6BCC /* LiscEOF.m in Sources */,
 				0C070CD4156AC641005D6BCC /* LiscStringInputPort.m in Sources */,

@@ -13,5 +13,6 @@
 - (id)read;
 
 @property(nonatomic, strong) id lineBuffer;
+@property(nonatomic, strong) NSRegularExpression *tokenizer;
 
 @end

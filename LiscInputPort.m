@@ -8,7 +8,6 @@
 #import "LiscNil.h"
 #import "LiscList.h"
 #import "LiscError.h"
-#import "RegexKitLite.h"
 
 #define TOKENIZER @"\\s*(,@|[('`,)]|\"(?:[\\\\].|[^\\\\\"])*\"|;.*|[^\\s('\"`,;)]*)(.*)"
 
@@ -21,6 +20,7 @@
 - (id)init {
     if (self = [super init]) {
         self.lineBuffer = @"";
+        self.tokenizer = [NSRegularExpression regularExpressionWithPattern:TOKENIZER options:0 error:NULL];
     }
     
     return self;
@@ -95,9 +95,12 @@
             return lineBuffer;
         }
 
-        //match token and the rest of the line into token, lineBuffer
-        token = [lineBuffer stringByMatching:TOKENIZER capture:1L];
-        self.lineBuffer = [lineBuffer stringByMatching:TOKENIZER capture:2L];
+        NSTextCheckingResult *match = [self.tokenizer firstMatchInString:lineBuffer
+                                                                 options:0
+                                                                   range:NSMakeRange(0, [lineBuffer length])];
+
+        token = [lineBuffer substringWithRange:[match rangeAtIndex:1]];
+        self.lineBuffer = [lineBuffer substringWithRange:[match rangeAtIndex:2]];
         
         //if we got a token and it's not a comment or blank, return it
         if (token && ![token hasPrefix:@";"] &&![token isEqualToString:@""]) {
