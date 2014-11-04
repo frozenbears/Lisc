@@ -4,8 +4,6 @@
 
 @implementation LiscSymbol
 
-@synthesize name;
-
 - (id)initWithString:(NSString *)string {
     
     if (self = [super init]) {
@@ -16,7 +14,7 @@
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-    LiscSymbol *copy = [[LiscSymbol alloc] initWithString:name];
+    LiscSymbol *copy = [[LiscSymbol alloc] initWithString:self.name];
     return copy;
 }
 

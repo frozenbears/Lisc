@@ -3,8 +3,6 @@
 
 @implementation LiscNumber
 
-@synthesize number;
-
 - (id)initWithNumber:(NSNumber *)theNumber {
     if (self = [super init]) {
         self.number = theNumber;
@@ -17,13 +15,13 @@
 }
 
 - (NSString *)print {
-    return [NSString stringWithFormat:@"%g", [number doubleValue]];
+    return [NSString stringWithFormat:@"%g", [self.number doubleValue]];
 }
 
 - (BOOL)isEqualToExpression:(LiscExpression *)exp {
     if ([self isMemberOfClass:[exp class]]) {
         NSNumber *num = ((LiscNumber *) exp).number;
-        return [number isEqualToNumber:num];
+        return [self.number isEqualToNumber:num];
     } else {
         return NO;
     }

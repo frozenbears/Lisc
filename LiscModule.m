@@ -3,8 +3,6 @@
 
 @implementation LiscModule
 
-@synthesize bindings;
-
 - (id)init {
     if (self = [super init]) {
         self.bindings = [NSMutableDictionary dictionary];
@@ -20,7 +18,7 @@
 }
 
 - (void)addBindingWithName:(NSString *)name withFunction:(LiscFunction *)function {
-    bindings[name] = function;
+    self.bindings[name] = function;
 }
 
 @end

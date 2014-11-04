@@ -8,8 +8,6 @@
 
 @implementation LiscEnvironment
 
-@synthesize dict, outer;
-
 + (LiscEnvironment *)globalEnvironment {
     
     NSArray *keys = @[];
@@ -48,10 +46,10 @@
 }
 
 - (LiscEnvironment *)environmentForVar:(NSString *)var {
-    if (dict[var]) {
+    if (self.dict[var]) {
         return self;
     } else {
-        return [outer environmentForVar:var];
+        return [self.outer environmentForVar:var];
     }
 }
 
@@ -64,7 +62,7 @@
 }
 
 - (void)defineWithVar:(NSString *)var expression:(LiscExpression *)exp {
-    [dict setValue:exp forKey:var];
+    [self.dict setValue:exp forKey:var];
 }
 
 

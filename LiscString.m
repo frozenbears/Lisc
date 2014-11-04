@@ -3,8 +3,6 @@
 
 @implementation LiscString
 
-@synthesize string;
-
 - (id)initWithString:(NSString *)theString {
     if (self = [super init]) {
         self.string = theString;
@@ -19,7 +17,7 @@
 
 - (NSString *)print {
     NSString *output = @"\"";
-    output = [output stringByAppendingString:string];
+    output = [output stringByAppendingString:self.string];
     output = [output stringByAppendingString:@"\""];
     return output;
 }

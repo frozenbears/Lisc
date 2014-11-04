@@ -3,8 +3,6 @@
 
 @implementation LiscBoolean
 
-@synthesize value;
-
 + (id)t {
     LiscBoolean *b = [[LiscBoolean alloc]init];
     b.value = YES;

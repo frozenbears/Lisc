@@ -4,8 +4,6 @@
 
 @implementation LiscFunction
 
-@synthesize block;
-
 + (LiscFunction *)functionWithBlock:(LiscCallBlock)b {
     return [[LiscFunction alloc] initWithBlock:b];
 }
@@ -19,7 +17,7 @@
 }
 
 - (LiscExpression *)callWithArgs:(NSArray *)args {
-    return block(args);
+    return self.block(args);
 }
 
 - (void)dealloc {

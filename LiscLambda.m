@@ -4,8 +4,6 @@
 
 @implementation LiscLambda
 
-@synthesize environment, names, expression;
-
 - (id)initWithVars:(NSArray *)vars expression:(id)exp environment:(LiscEnvironment *)env {
     
     if (self = [super init]) {
@@ -14,7 +12,7 @@
         for (LiscSymbol *s in vars) {
             //these will be the variable names bound to the arguments 
             //passed when the lambda is actually called
-            [names addObject:s.name];
+            [self.names addObject:s.name];
         }
         
         self.environment = env;
@@ -25,8 +23,8 @@
 
 //calling a lambda then simply means evaluating the expression within the enclosing scope
 - (LiscExpression *)callWithArgs:(NSArray *)args {
-    LiscEnvironment *enclosingEnvironment = [[LiscEnvironment alloc] initWithParams:names args:args outer:environment];
-    id result = [expression eval:enclosingEnvironment];
+    LiscEnvironment *enclosingEnvironment = [[LiscEnvironment alloc] initWithParams:self.names args:args outer:self.environment];
+    id result = [self.expression eval:enclosingEnvironment];
     return result;
 }
 

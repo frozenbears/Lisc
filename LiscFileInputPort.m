@@ -5,8 +5,6 @@
 
 @implementation LiscFileInputPort
 
-@synthesize handle;
-
 - (id)initWithFile:(NSString *)path {
     if (self = [super init]) {
         self.handle = [NSFileHandle fileHandleForReadingAtPath:path];
@@ -32,7 +30,7 @@
 }
 
 - (id)readLine {
-    NSString *line = [handle readLine];
+    NSString *line = [self.handle readLine];
     if (!line || !line.length) return [LiscEOF eof];
     return line;
 }

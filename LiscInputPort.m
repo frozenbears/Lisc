@@ -13,8 +13,6 @@
 
 @implementation LiscInputPort
 
-@synthesize lineBuffer;
-
 //input streaming
 
 - (id)init {
@@ -87,20 +85,20 @@
     
     while(1) {
         
-        if ([lineBuffer isEqual:@""]) {
+        if ([self.lineBuffer isEqual:@""]) {
             self.lineBuffer = [self readLine];
         }
 
-        if ([lineBuffer isMemberOfClass:[LiscEOF class]]) {
-            return lineBuffer;
+        if ([self.lineBuffer isMemberOfClass:[LiscEOF class]]) {
+            return self.lineBuffer;
         }
 
-        NSTextCheckingResult *match = [self.tokenizer firstMatchInString:lineBuffer
+        NSTextCheckingResult *match = [self.tokenizer firstMatchInString:self.lineBuffer
                                                                  options:0
-                                                                   range:NSMakeRange(0, [lineBuffer length])];
+                                                                   range:NSMakeRange(0, [self.lineBuffer length])];
 
-        token = [lineBuffer substringWithRange:[match rangeAtIndex:1]];
-        self.lineBuffer = [lineBuffer substringWithRange:[match rangeAtIndex:2]];
+        token = [self.lineBuffer substringWithRange:[match rangeAtIndex:1]];
+        self.lineBuffer = [self.lineBuffer substringWithRange:[match rangeAtIndex:2]];
         
         //if we got a token and it's not a comment or blank, return it
         if (token && ![token hasPrefix:@";"] &&![token isEqualToString:@""]) {

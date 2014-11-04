@@ -10,8 +10,6 @@
 
 @implementation LiscList
 
-@synthesize array;
-
 - (id)initWithArray:(NSArray *)theArray {
     if (self = [super init]) {
         self.array = theArray;
@@ -28,16 +26,16 @@
 - (LiscExpression *)eval:(LiscEnvironment *)env {
     
     //an empty list is just an empty list
-    if (!array.count) return self;
+    if (!self.array.count) return self;
     
     //the head sets the agenda
-    LiscExpression *head = array[0];
+    LiscExpression *head = self.array[0];
     
     if ([head isKindOfClass:LiscSymbol.class]) {
         NSString *s = ((LiscSymbol *)head).name;
         NSArray *args = @[];
-        if (array.count > 1) {
-            args = [array subarrayWithRange:NSMakeRange(1, array.count-1)];
+        if (self.array.count > 1) {
+            args = [self.array subarrayWithRange:NSMakeRange(1, self.array.count-1)];
         }
         
         //"quote" prevents the subsequent thing from being evaluated
@@ -109,7 +107,7 @@
             NSMutableArray *exps = [NSMutableArray array];
             
             //evaluate all the expressions in the list, including the head
-            for (LiscExpression *exp in array) {
+            for (LiscExpression *exp in self.array) {
                 [exps addObject:[exp eval:env]];
             }
             
@@ -131,7 +129,7 @@
         NSMutableArray *exps = [NSMutableArray array];
         
         //evaluate all the expressions in the list, incluing the head, and return
-        for (LiscExpression *exp in array) {
+        for (LiscExpression *exp in self.array) {
             [exps addObject:[exp eval:env]];
         }
         
@@ -145,13 +143,13 @@
     
     NSString *listString = @"(";
     
-    for (int i=0; i<array.count; i++) {
+    for (int i=0; i<self.array.count; i++) {
         
-        if (i > 0 && i <array.count) {
+        if (i > 0 && i < self.array.count) {
             listString = [listString stringByAppendingString:@" "];
         } 
         
-        listString = [listString stringByAppendingString:[array[i] print]];
+        listString = [listString stringByAppendingString:[self.array[i] print]];
     }
     
     listString = [listString stringByAppendingString:@")"];
@@ -163,9 +161,9 @@
     BOOL result = YES;
     if ([self isKindOfClass:[exp class]]) {
         int count = ((LiscList *)exp).array.count;
-        if (array.count == count) {
+        if (self.array.count == count) {
             for (int i = 0; i<count; i++) {
-                LiscExpression *left = array[i];
+                LiscExpression *left = self.array[i];
                 LiscExpression *right = (((LiscList *)exp).array)[i];
                 if (![left isEqualToExpression:right]) {
                     result = NO;
