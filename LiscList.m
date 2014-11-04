@@ -160,7 +160,7 @@
 - (BOOL)isEqualToExpression:(LiscExpression *)exp {
     BOOL result = YES;
     if ([self isKindOfClass:[exp class]]) {
-        int count = ((LiscList *)exp).array.count;
+        NSUInteger count = ((LiscList *)exp).array.count;
         if (self.array.count == count) {
             for (int i = 0; i<count; i++) {
                 LiscExpression *left = self.array[i];

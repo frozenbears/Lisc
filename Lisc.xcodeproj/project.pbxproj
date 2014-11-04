@@ -21,9 +21,6 @@
 		0C9C5A63165A06A000B50B2D /* LiscNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9C5A62165A06A000B50B2D /* LiscNumber.m */; };
 		0CA598C1146D1AD000724E54 /* LiscEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA598C0146D1AD000724E54 /* LiscEnvironment.m */; };
 		0CCDF6BB16759BF400F36502 /* LiscArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCDF6BA16759BF400F36502 /* LiscArgs.m */; };
-		0CCDF7A71683B1F900F36502 /* LiscTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCDF7A61683B1F900F36502 /* LiscTest.m */; };
-		0CCDF7E41683C15F00F36502 /* LiscTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCDF7E31683C15F00F36502 /* LiscTestSuite.m */; };
-		0CCDF81316842D5A00F36502 /* LiscMainTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCDF81216842D5A00F36502 /* LiscMainTestSuite.m */; };
 		0CCEC0C5147C92C100D6B4F2 /* LiscModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC0C4147C92C100D6B4F2 /* LiscModule.m */; };
 		0CCEC0C8147C93FA00D6B4F2 /* LiscMathModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC0C7147C93FA00D6B4F2 /* LiscMathModule.m */; };
 		0CCEC0CB147C966E00D6B4F2 /* LiscFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC0CA147C966E00D6B4F2 /* LiscFunction.m */; };
@@ -32,6 +29,27 @@
 		0CD73C3D1A08A4EE0084A6CB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD73C3C1A08A4EE0084A6CB /* XCTest.framework */; };
 		0CD73C431A08A4EE0084A6CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CD73C411A08A4EE0084A6CB /* InfoPlist.strings */; };
 		0CD73C451A08A4EE0084A6CB /* Lisc_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD73C441A08A4EE0084A6CB /* Lisc_Tests.m */; };
+		0CD73C4D1A08AE360084A6CB /* LiscArgs.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCDF6BA16759BF400F36502 /* LiscArgs.m */; };
+		0CD73C501A08AE360084A6CB /* LiscEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA598C0146D1AD000724E54 /* LiscEnvironment.m */; };
+		0CD73C521A08AE360084A6CB /* LiscError.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9C5A3A1659FB3C00B50B2D /* LiscError.m */; };
+		0CD73C541A08AE5B0084A6CB /* LiscModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC0C4147C92C100D6B4F2 /* LiscModule.m */; };
+		0CD73C561A08AE5B0084A6CB /* LiscMathModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC0C7147C93FA00D6B4F2 /* LiscMathModule.m */; };
+		0CD73C581A08AE5B0084A6CB /* LiscCoreModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C36EB62153A53790023D73C /* LiscCoreModule.m */; };
+		0CD73C5B1A08AE5B0084A6CB /* LiscSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C36BF0F1473667F007A0F08 /* LiscSymbol.m */; };
+		0CD73C5D1A08AE5B0084A6CB /* LiscBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C300AB5147621DE007B6631 /* LiscBoolean.m */; };
+		0CD73C5F1A08AE5B0084A6CB /* LiscNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C300AD4147625B3007B6631 /* LiscNil.m */; };
+		0CD73C611A08AE5B0084A6CB /* LiscFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC0CA147C966E00D6B4F2 /* LiscFunction.m */; };
+		0CD73C631A08AE5B0084A6CB /* LiscLambda.m in Sources */ = {isa = PBXBuildFile; fileRef = 492B687A146DD1F000B6FCF4 /* LiscLambda.m */; };
+		0CD73C651A08AE5B0084A6CB /* LiscInputPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070C90156A12D5005D6BCC /* LiscInputPort.m */; };
+		0CD73C671A08AE5B0084A6CB /* LiscFileInputPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070DFA156AED59005D6BCC /* LiscFileInputPort.m */; };
+		0CD73C691A08AE5B0084A6CB /* LiscStringInputPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070CD3156AC641005D6BCC /* LiscStringInputPort.m */; };
+		0CD73C6B1A08AE5B0084A6CB /* LiscEOF.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C070C93156A1665005D6BCC /* LiscEOF.m */; };
+		0CD73C6D1A08AE5B0084A6CB /* LiscNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9C5A62165A06A000B50B2D /* LiscNumber.m */; };
+		0CD73C6F1A08AE5B0084A6CB /* LiscList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2438616630B0B00A84D54 /* LiscList.m */; };
+		0CD73C711A08AE5B0084A6CB /* LiscString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8259C2166494E500826946 /* LiscString.m */; };
+		0CD73C731A08AE5B0084A6CB /* LiscExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C825A1D1664A0DE00826946 /* LiscExpression.m */; };
+		0CD73C751A08AE5B0084A6CB /* NSFileHandle+ReadLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC1AF1480559B00D6B4F2 /* NSFileHandle+ReadLine.m */; };
+		0CD73C771A08AE5B0084A6CB /* NSData+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC1B2148055D200D6B4F2 /* NSData+Extensions.m */; };
 		0CF2438716630B0B00A84D54 /* LiscList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CF2438616630B0B00A84D54 /* LiscList.m */; };
 		492B687B146DD1F000B6FCF4 /* LiscLambda.m in Sources */ = {isa = PBXBuildFile; fileRef = 492B687A146DD1F000B6FCF4 /* LiscLambda.m */; };
 		8DD76F9A0486AA7600D96B5E /* Lisc.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* Lisc.m */; settings = {ATTRIBUTES = (); }; };
@@ -93,12 +111,6 @@
 		0CA598C0146D1AD000724E54 /* LiscEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscEnvironment.m; sourceTree = "<group>"; };
 		0CCDF6B916759BF400F36502 /* LiscArgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscArgs.h; sourceTree = "<group>"; };
 		0CCDF6BA16759BF400F36502 /* LiscArgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscArgs.m; sourceTree = "<group>"; };
-		0CCDF7A51683B1F900F36502 /* LiscTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscTest.h; sourceTree = "<group>"; };
-		0CCDF7A61683B1F900F36502 /* LiscTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscTest.m; sourceTree = "<group>"; };
-		0CCDF7E21683C15F00F36502 /* LiscTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscTestSuite.h; sourceTree = "<group>"; };
-		0CCDF7E31683C15F00F36502 /* LiscTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscTestSuite.m; sourceTree = "<group>"; };
-		0CCDF81116842D5A00F36502 /* LiscMainTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscMainTestSuite.h; sourceTree = "<group>"; };
-		0CCDF81216842D5A00F36502 /* LiscMainTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscMainTestSuite.m; sourceTree = "<group>"; };
 		0CCEC0C3147C92C100D6B4F2 /* LiscModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscModule.h; sourceTree = "<group>"; };
 		0CCEC0C4147C92C100D6B4F2 /* LiscModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiscModule.m; sourceTree = "<group>"; };
 		0CCEC0C6147C93FA00D6B4F2 /* LiscMathModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiscMathModule.h; sourceTree = "<group>"; };
@@ -170,7 +182,6 @@
 				0CA598C0146D1AD000724E54 /* LiscEnvironment.m */,
 				0C9C5A391659FB3C00B50B2D /* LiscError.h */,
 				0C9C5A3A1659FB3C00B50B2D /* LiscError.m */,
-				0CCDF8A41684489D00F36502 /* Testing */,
 				0C36EB67153A56CD0023D73C /* Modules */,
 				0C36EB66153A56680023D73C /* Protocols */,
 				0C36EB65153A55510023D73C /* Types */,
@@ -259,19 +270,6 @@
 				32A70AAB03705E1F00C91783 /* Lisc_Prefix.pch */,
 			);
 			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		0CCDF8A41684489D00F36502 /* Testing */ = {
-			isa = PBXGroup;
-			children = (
-				0CCDF7A51683B1F900F36502 /* LiscTest.h */,
-				0CCDF7A61683B1F900F36502 /* LiscTest.m */,
-				0CCDF7E21683C15F00F36502 /* LiscTestSuite.h */,
-				0CCDF7E31683C15F00F36502 /* LiscTestSuite.m */,
-				0CCDF81116842D5A00F36502 /* LiscMainTestSuite.h */,
-				0CCDF81216842D5A00F36502 /* LiscMainTestSuite.m */,
-			);
-			name = Testing;
 			sourceTree = "<group>";
 		};
 		0CD73C3B1A08A4EE0084A6CB /* Frameworks */ = {
@@ -407,6 +405,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CD73C541A08AE5B0084A6CB /* LiscModule.m in Sources */,
+				0CD73C561A08AE5B0084A6CB /* LiscMathModule.m in Sources */,
+				0CD73C581A08AE5B0084A6CB /* LiscCoreModule.m in Sources */,
+				0CD73C5B1A08AE5B0084A6CB /* LiscSymbol.m in Sources */,
+				0CD73C5D1A08AE5B0084A6CB /* LiscBoolean.m in Sources */,
+				0CD73C5F1A08AE5B0084A6CB /* LiscNil.m in Sources */,
+				0CD73C611A08AE5B0084A6CB /* LiscFunction.m in Sources */,
+				0CD73C631A08AE5B0084A6CB /* LiscLambda.m in Sources */,
+				0CD73C651A08AE5B0084A6CB /* LiscInputPort.m in Sources */,
+				0CD73C671A08AE5B0084A6CB /* LiscFileInputPort.m in Sources */,
+				0CD73C691A08AE5B0084A6CB /* LiscStringInputPort.m in Sources */,
+				0CD73C6B1A08AE5B0084A6CB /* LiscEOF.m in Sources */,
+				0CD73C6D1A08AE5B0084A6CB /* LiscNumber.m in Sources */,
+				0CD73C6F1A08AE5B0084A6CB /* LiscList.m in Sources */,
+				0CD73C711A08AE5B0084A6CB /* LiscString.m in Sources */,
+				0CD73C731A08AE5B0084A6CB /* LiscExpression.m in Sources */,
+				0CD73C751A08AE5B0084A6CB /* NSFileHandle+ReadLine.m in Sources */,
+				0CD73C771A08AE5B0084A6CB /* NSData+Extensions.m in Sources */,
+				0CD73C4D1A08AE360084A6CB /* LiscArgs.m in Sources */,
+				0CD73C501A08AE360084A6CB /* LiscEnvironment.m in Sources */,
+				0CD73C521A08AE360084A6CB /* LiscError.m in Sources */,
 				0CD73C451A08A4EE0084A6CB /* Lisc_Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,9 +456,6 @@
 				0C8259C3166494E500826946 /* LiscString.m in Sources */,
 				0C825A1E1664A0DE00826946 /* LiscExpression.m in Sources */,
 				0CCDF6BB16759BF400F36502 /* LiscArgs.m in Sources */,
-				0CCDF7A71683B1F900F36502 /* LiscTest.m in Sources */,
-				0CCDF7E41683C15F00F36502 /* LiscTestSuite.m in Sources */,
-				0CCDF81316842D5A00F36502 /* LiscMainTestSuite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

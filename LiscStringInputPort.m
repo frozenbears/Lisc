@@ -13,6 +13,10 @@
     return self;
 }
 
++ (instancetype)stringInputPortWithString:(NSString *)inputString {
+    return [[self alloc] initWithString:inputString];
+}
+
 - (id)readLine {
     if (self.lines.count) {
         NSString *line = self.lines[0];

@@ -1,5 +1,4 @@
 #import <Foundation/Foundation.h>
-#import "LiscMainTestSuite.h"
 #import "LiscEnvironment.h"
 #import "LiscExpression.h"
 #import "LiscFileInputPort.h"
@@ -8,11 +7,6 @@
 
 int main (int argc, const char * argv[]) {
     @autoreleasepool {
-        //uncomment for testing joy
-        //TODO: set up an additional target and/or command line flag?
-        LiscMainTestSuite *suite = [LiscMainTestSuite suite];
-        [suite run];
-
         //our global environment
         LiscEnvironment *env = [LiscEnvironment globalEnvironment];
         
