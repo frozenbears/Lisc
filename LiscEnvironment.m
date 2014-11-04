@@ -8,7 +8,7 @@
 
 @implementation LiscEnvironment
 
-+ (LiscEnvironment *)globalEnvironment {
++ (LiscEnvironment *)environment {
     
     NSArray *keys = @[];
     NSArray *values = @[];

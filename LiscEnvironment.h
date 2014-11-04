@@ -5,7 +5,7 @@
 
 @interface LiscEnvironment : NSObject
 
-+ (LiscEnvironment *)globalEnvironment; //use this to make a brand new one with no outer scope
++ (LiscEnvironment *)environment; //use this to make a brand new one with no outer scope
 
 - (id)initWithParams:(NSArray *)params args:(NSArray *)args outer:(LiscEnvironment *)env;
 - (void)addModule:(LiscModule *)module;

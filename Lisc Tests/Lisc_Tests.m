@@ -13,7 +13,7 @@
 
 - (void)setUp {
     [super setUp];
-    self.environment = [LiscEnvironment globalEnvironment];
+    self.environment = [LiscEnvironment environment];
     //self.inport = [LiscStringInputPort stringInputPortWithString:<#(NSString *)#>
 }
 

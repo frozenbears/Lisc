@@ -8,7 +8,7 @@
 int main (int argc, const char * argv[]) {
     @autoreleasepool {
         //our global environment
-        LiscEnvironment *env = [LiscEnvironment globalEnvironment];
+        LiscEnvironment *env = [LiscEnvironment environment];
         
         //a port for reading lisc expressions from stdin
         LiscFileInputPort *inport = [LiscFileInputPort portWithStdin];
