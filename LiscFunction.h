@@ -9,6 +9,6 @@
 + (LiscFunction *)functionWithBlock:(LiscCallBlock)b;
 - (id)initWithBlock:(LiscCallBlock)b;
 
-@property(nonatomic, weak) LiscCallBlock block;
+@property(nonatomic, strong) LiscCallBlock block;
 
 @end

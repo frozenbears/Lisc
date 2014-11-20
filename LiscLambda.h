@@ -6,9 +6,9 @@
 
 @interface LiscLambda : LiscExpression <LiscCallable>
 
-- (id)initWithVars:(NSArray *)vars expression:(id)exp environment:(LiscEnvironment *)env;
+- (id)initWithVars:(NSArray *)vars expression:(id)exp environment:(__weak LiscEnvironment *)env;
 
-@property(nonatomic, strong) LiscEnvironment *environment;
+@property(nonatomic, weak) LiscEnvironment *environment;
 @property(nonatomic, strong) NSMutableArray *names; //of NSString;
 @property(nonatomic, strong) id expression;
 

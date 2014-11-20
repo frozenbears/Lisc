@@ -23,7 +23,7 @@
 }
 
 - (id)initWithParams:(NSArray *)params args:(NSArray *)args outer:(LiscEnvironment *)env {
-    
+
     if (self = [super init]) {
         //this will happen if you try to call a lambda with the wrong number of arguments
         if(args.count != params.count) {
@@ -64,6 +64,5 @@
 - (void)defineWithVar:(NSString *)var expression:(LiscExpression *)exp {
     [self.dict setValue:exp forKey:var];
 }
-
 
 @end

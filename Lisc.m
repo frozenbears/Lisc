@@ -2,11 +2,14 @@
 #import "LiscEnvironment.h"
 #import "LiscExpression.h"
 #import "LiscFileInputPort.h"
+#import "LiscStringInputPort.h"
 #import "LiscEOF.h"
-#import "liscError.h"
+#import "LiscError.h"
 
 int main (int argc, const char * argv[]) {
+
     @autoreleasepool {
+
         //our global environment
         LiscEnvironment *env = [LiscEnvironment environment];
         
@@ -22,24 +25,29 @@ int main (int argc, const char * argv[]) {
         
         //this is how you make a REPL
         while (1) {
-            NSString *prompt = @"> ";
-            [output writeData:[prompt dataUsingEncoding:NSUTF8StringEncoding]];
-            @try {
-                NSString *result = [[[inport read] eval:env] print];
-                //don't bother printing if the result is nil (which happens a lot)
-                if (![result isEqualToString:@"nil"]) {
-                    [output writeData:[result dataUsingEncoding:NSUTF8StringEncoding]];
+            @autoreleasepool {
+                NSString *prompt = @"> ";
+                [output writeData:[prompt dataUsingEncoding:NSUTF8StringEncoding]];
+                @try {
+                    NSString *result = [[[inport read] eval:env] print];
+                    //don't bother printing if the result is nil (which happens a lot)
+                    if (![result isEqualToString:@"nil"]) {
+                        [output writeData:[result dataUsingEncoding:NSUTF8StringEncoding]];
+                        [output writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
+                    }
+                } @catch (NSException *e) {
+                    if (![e isKindOfClass:[LiscError class]]) {
+                        NSLog(@"%@", e.description);
+                    } else {
+                        @throw;
+                    }
+
+                    [output writeData:[e.description dataUsingEncoding:NSUTF8StringEncoding]];
                     [output writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
                 }
-            } @catch (NSException *e) {
-                if (![e isKindOfClass:[LiscError class]]) {
-                    @throw;
-                }
-
-                [output writeData:[e.description dataUsingEncoding:NSUTF8StringEncoding]];
-                [output writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
             }
         }
     }
+
     return 0;
 }

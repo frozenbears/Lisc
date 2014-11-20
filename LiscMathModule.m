@@ -4,6 +4,7 @@
 #import "LiscNumber.h"
 #import "LiscError.h"
 #import "LiscArgs.h"
+#import "LiscBoolean.h"
 
 @implementation LiscMathModule
 
@@ -47,9 +48,18 @@
         }       
         return (id)[LiscNumber numberWithNumber:@(difference)]; 
     };
+
+    LiscCallBlock lessThan = ^(NSArray *args) {
+        [LiscArgs checkArgs:args expecting:@[[LiscNumber class], [LiscNumber class]]];
+        LiscNumber *first = [args objectAtIndex:0];
+        LiscNumber *second = [args objectAtIndex:1];
+        BOOL b = first.number.doubleValue < second.number.doubleValue;
+        return (id)[LiscBoolean booleanWithValue:b];
+    };
     
     self.bindings[@"+"] = [LiscFunction functionWithBlock:add];
     self.bindings[@"-"] = [LiscFunction functionWithBlock:subtract];
+    self.bindings[@"<"] = [LiscFunction functionWithBlock:lessThan];
 }
 
 @end

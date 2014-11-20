@@ -17,11 +17,11 @@
 }
 
 - (LiscExpression *)callWithArgs:(NSArray *)args {
-    return self.block(args);
-}
-
-- (void)dealloc {
-    self.block = nil;
+    LiscExpression *exp;
+    @autoreleasepool {
+        exp = self.block(args);
+    }
+    return exp;
 }
 
 @end

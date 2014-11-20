@@ -4,6 +4,7 @@
 
 @interface LiscBoolean : LiscExpression
 
++(instancetype)booleanWithValue:(BOOL)value;
 + (id)t;
 + (id)f;
 

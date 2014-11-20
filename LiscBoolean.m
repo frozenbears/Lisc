@@ -3,16 +3,24 @@
 
 @implementation LiscBoolean
 
+- (instancetype)initWithValue:(BOOL)value {
+    self = [super init];
+    if (self) {
+        self.value = value;
+    }
+    return self;
+}
+
++ (instancetype)booleanWithValue:(BOOL)value {
+    return [[self alloc] initWithValue:value];
+}
+
 + (id)t {
-    LiscBoolean *b = [[LiscBoolean alloc]init];
-    b.value = YES;
-    return b;
+    return [LiscBoolean booleanWithValue:YES];
 }
 
 + (id)f {
-    LiscBoolean *b = [[LiscBoolean alloc]init];
-    b.value = NO;
-    return b;
+    return [LiscBoolean booleanWithValue:NO];
 }
 
 - (NSString *)print {
