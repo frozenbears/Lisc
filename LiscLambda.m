@@ -4,10 +4,10 @@
 
 @implementation LiscLambda
 
-- (id)initWithVars:(NSArray *)vars expression:(id)exp environment:(LiscEnvironment *)env {
+- (id)initWithVars:(NSArray *)vars expressions:(NSArray *)exps environment:(LiscEnvironment *)env {
     
     if (self = [super init]) {
-        self.expression = exp;          
+        self.expressions = exps;
         self.names = [NSMutableArray array];
         for (LiscSymbol *s in vars) {
             //these will be the variable names bound to the arguments 
@@ -26,7 +26,9 @@
     LiscExpression *result;
     @autoreleasepool {
         LiscEnvironment *enclosingEnvironment = [[LiscEnvironment alloc] initWithParams:self.names args:args outer:self.environment];
-        result = [self.expression eval:enclosingEnvironment];
+        for (LiscExpression *exp in self.expressions) {
+            result = [exp eval:enclosingEnvironment];
+        }
     }
 
     return result;

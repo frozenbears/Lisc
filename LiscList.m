@@ -97,9 +97,8 @@
             [LiscArgs checkArgs:args expecting:@[[LiscList class], [LiscExpression class]]];
             
             LiscList *vars = args[0];
-            LiscExpression *exp = args[1];
-            LiscLambda *lambda = [[LiscLambda alloc] initWithVars:vars.array 
-                                                        expression:exp
+            LiscLambda *lambda = [[LiscLambda alloc] initWithVars:vars.array
+                                                        expressions:[args subarrayWithRange:NSMakeRange(1, args.count-1)]
                                                        environment:env];
             return lambda;
         } else {

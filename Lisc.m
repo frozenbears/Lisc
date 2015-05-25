@@ -29,7 +29,8 @@ int main (int argc, const char * argv[]) {
                 NSString *prompt = @"> ";
                 [output writeData:[prompt dataUsingEncoding:NSUTF8StringEncoding]];
                 @try {
-                    NSString *result = [[[inport read] eval:env] print];
+                    LiscExpression *res = [[inport read] eval:env];
+                    NSString *result = [res print];
                     //don't bother printing if the result is nil (which happens a lot)
                     if (![result isEqualToString:@"nil"]) {
                         [output writeData:[result dataUsingEncoding:NSUTF8StringEncoding]];
