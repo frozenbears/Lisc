@@ -38,13 +38,11 @@ int main (int argc, const char * argv[]) {
                     }
                 } @catch (NSException *e) {
                     if (![e isKindOfClass:[LiscError class]]) {
-                        NSLog(@"%@", e.description);
-                    } else {
                         @throw;
+                    } else {
+                        [output writeData:[e.description dataUsingEncoding:NSUTF8StringEncoding]];
+                        [output writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
                     }
-
-                    [output writeData:[e.description dataUsingEncoding:NSUTF8StringEncoding]];
-                    [output writeData:[@"\n" dataUsingEncoding:NSUTF8StringEncoding]];
                 }
             }
         }

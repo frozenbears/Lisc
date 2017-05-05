@@ -1,7 +1,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface LiscError : NSObject
+@interface LiscError : NSException
 
 + (void)raiseSyntaxError:(NSString *)reason;
 + (void)raiseNameError:(NSString *)reason;

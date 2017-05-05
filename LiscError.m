@@ -4,10 +4,9 @@
 @implementation LiscError
 
 + (void)throw:(NSString *)name withReason:(NSString *)reason {
-
-    @throw [NSException exceptionWithName:name
-                                   reason:reason  
-                                 userInfo:nil];
+    @throw [self exceptionWithName:name
+                            reason:reason
+                          userInfo:nil];
 }
 
 + (void)raiseSyntaxError:(NSString *)reason {
