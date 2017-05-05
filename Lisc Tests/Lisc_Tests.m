@@ -14,7 +14,6 @@
 - (void)setUp {
     [super setUp];
     self.environment = [LiscEnvironment environment];
-    //self.inport = [LiscStringInputPort stringInputPortWithString:<#(NSString *)#>
 }
 
 - (void)eval:(NSString *)input expectingOutput:(NSString *)expectedOutput {
