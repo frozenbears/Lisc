@@ -1,5 +1,5 @@
 
-#import "NSFileHandle+Readline.h"
+#import "NSFileHandle+ReadLine.h"
 #import "NSData+Extensions.h"
 
 //category implementation gratefully borrowed from:
